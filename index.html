@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="heebong" />
+    <title>PORTFOLIO</title>
+
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/common.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./assets/icon/face64.jpg" />
+    <link rel="apple-touch-icon-precomposed" href="./assets/icon/face500.jpg" />
+    <link rel="icon" href="./assets/icon/face128.jpg" />
+  </head>
+  <body>
+    <div id="open">
+      <div class="open__wrap">
+        <h1 class="open__title">HI, PLEASE ENJOY MY PORTFOLIO.</h1>
+        <p class="open__desc">
+          사이트는 간결하고 재미있게 구성되도록 노력했습니다. 즐겁게 감상하세요.
+        </p>
+        <button class="open__btn">ENJOY</button>
+      </div>
+      <div class="load__wrap">
+        <p class="load__desc">
+          <!-- 즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요. -->
+        </p>
+      </div>
+    </div>
+    <!-- //open__wrap -->
+
+    <!-- script -->
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/TextPlugin.min.js"></script>
+    <script>
+      const openBtn = document.querySelector(".open__btn");
+      const loadWrap = document.querySelector(".load__wrap");
+      const loadDesc = document.querySelector(".load__desc");
+
+      openBtn.addEventListener("click", () => {
+        gsap.to(loadWrap, {
+          duration: 1.5,
+          top: 0,
+          ease: "expo.inOut",
+        });
+        gsap.to(".load__desc", {
+          duration: 6,
+          text: "즐기실 준비 됐나요? 먼저 저에 대하여 알고 가요.",
+          delay: 1.5,
+        });
+        setTimeout(() => {
+          //location.href = "./intro.html";
+        }, 6300);
+      });
+    </script>
+  </body>
+</html>

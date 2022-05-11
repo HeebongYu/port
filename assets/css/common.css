@@ -1,0 +1,14 @@
+/*변수설정*/
+:root {
+  /*색상*/
+  --white: #ffffff;
+  --green: #c1d72e;
+  --greenW: #d4dd9c;
+  --red: #f96f55;
+  --redW: #e1ada1;
+  --blue: #89e2da;
+
+  /*폰트*/
+  --en_font: "Josefin Sans";
+  --kr_font: "Hahmlet";
+}
