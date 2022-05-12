@@ -324,3 +324,21 @@
     opacity: 0;
   }
 }
+
+/* cont__page */
+.cont__page {
+  width: 100%;
+}
+.cont__wrap {
+  background-color: var(--red);
+  display: flex;
+  width: 600%;
+  padding-top: 60px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.cont__wrap section {
+  width: 100%;
+}

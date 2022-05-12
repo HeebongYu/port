@@ -27,22 +27,12 @@
       rel="stylesheet"
     />
     <style>
-      .cont__page {
-        width: 100%;
-      }
-      .cont__wrap {
-        background-color: var(--red);
-        display: flex;
-        width: 600%;
-        padding-top: 60px;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-      .cont__wrap section {
-        width: 100%;
-        box-sizing: border-box;
+      .cont__section1,
+      .cont__section2,
+      .cont__section3,
+      .cont__section4,
+      .cont__section5,
+      .cont__section6 {
         border: 10px solid #000;
       }
     </style>
@@ -75,24 +65,6 @@
     <!-- //cont__page -->
 
     <!-- script -->
-    <script>
-      const contWrap = document.querySelector(".cont__wrap");
-      const contSection = document.querySelector(".cont__wrap section");
-
-      function scroll() {
-        let scrollTop = document.documentElement.scrollTop;
-        let contWidth = contWrap.offsetWidth;
-        let viewWidth = document.body.offsetWidth;
-        let viewHeight = window.innerHeight;
-        let screenRatio = viewWidth / viewHeight;
-
-        document.body.style.height = contWidth / screenRatio + "px";
-        contWrap.style.left = -scrollTop * screenRatio + "px";
-
-        // 스크롤 이동 감지
-        requestAnimationFrame(scroll);
-      }
-      scroll();
-    </script>
+    <script src="../assets/js/cont.js"></script>
   </body>
 </html>
