@@ -20,17 +20,79 @@
       href="../assets/icon/face500.jpg"
     />
     <link rel="icon" href="../assets/icon/face128.jpg" />
+
+    <!-- 아이콘 -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <style>
       .cont__page {
         width: 100%;
+      }
+      .cont__wrap {
         background-color: var(--red);
-
-        height: 5000px;
+        display: flex;
+        width: 600%;
+        padding-top: 60px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .cont__wrap section {
+        width: 100%;
+        box-sizing: border-box;
+        border: 10px solid #000;
       }
     </style>
   </head>
   <body>
-    <div class="cont__page"></div>
+    <div class="cont__page">
+      <header class="header">
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <button class="material-icons menu">menu</button>
+      </header>
+      <!-- //header -->
+
+      <main class="cont__wrap">
+        <section class="cont__section1">1</section>
+        <section class="cont__section2">2</section>
+        <section class="cont__section3">3</section>
+        <section class="cont__section4">4</section>
+        <section class="cont__section5">5</section>
+        <section class="cont__section6">6</section>
+      </main>
+      <!-- //cont__wrap -->
+    </div>
     <!-- //cont__page -->
+
+    <!-- script -->
+    <script>
+      const contWrap = document.querySelector(".cont__wrap");
+      const contSection = document.querySelector(".cont__wrap section");
+
+      function scroll() {
+        let scrollTop = document.documentElement.scrollTop;
+        let contWidth = contWrap.offsetWidth;
+        let viewWidth = document.body.offsetWidth;
+        let viewHeight = window.innerHeight;
+        let screenRatio = viewWidth / viewHeight;
+
+        document.body.style.height = contWidth / screenRatio + "px";
+        contWrap.style.left = -scrollTop * screenRatio + "px";
+
+        // 스크롤 이동 감지
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
   </body>
 </html>

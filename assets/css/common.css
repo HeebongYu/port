@@ -20,13 +20,30 @@
   height: 60px;
   position: fixed;
   z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .header .menu {
-  float: right;
   margin-right: 50px;
   font-size: 40px;
-  line-height: 60px;
 }
+.header .dots {
+  display: flex;
+  margin-right: 10px;
+}
+.header .dots .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e1ada1;
+  margin-right: 10px;
+}
+.header .dots .dot.active {
+  background: #9c1f00;
+}
+
+/* stop-scrolling */
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
