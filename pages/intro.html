@@ -26,6 +26,16 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <style>
+      body {
+        background: var(--green);
+        opacity: 0;
+        transition: all 1s;
+      }
+      body.show {
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <div class="intro__page">
@@ -171,5 +181,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
     <script src="../assets/js/loading.js"></script>
+    <script>
+      (function () {
+        setTimeout(() => {
+          document.body.classList.add("show");
+          scrollTo(0, 0);
+        }, 100);
+      })();
+    </script>
   </body>
 </html>

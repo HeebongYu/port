@@ -27,6 +27,16 @@
       rel="stylesheet"
     />
     <style>
+      body {
+        background: var(--red);
+        opacity: 0;
+        transition: all 1s;
+      }
+      body.show {
+        opacity: 1;
+      }
+    </style>
+    <style>
       .cont__section1,
       .cont__section2,
       .cont__section3,
@@ -152,5 +162,13 @@
 
     <!-- script -->
     <script src="../assets/js/cont.js"></script>
+    <script>
+      (function () {
+        setTimeout(() => {
+          document.body.classList.add("show");
+          scrollTo(0, 0);
+        }, 100);
+      })();
+    </script>
   </body>
 </html>

@@ -17,10 +17,15 @@ openBtn.addEventListener("click", () => {
     delay: 1.5,
   });
 
+  // 로딩 타이핑 제거
+  setTimeout(() => {
+    openLoadTxt.classList.add("hidden");
+  }, 7000);
+
   // intro 페이지로 이동
   setTimeout(() => {
     location.href = "./pages/intro.html";
-  }, 7000);
+  }, 7500);
 });
 
 const introBtn = document.querySelector(".intro__btn");
@@ -51,8 +56,13 @@ introBtn.addEventListener("click", () => {
     delay: 3,
   });
 
+  // 로딩 타이핑 제거
+  setTimeout(() => {
+    introLoadTxt.classList.add("hidden");
+  }, 7000);
+
   // cont 페이지로 이동
   setTimeout(() => {
     location.href = "./cont.html";
-  }, 7000);
+  }, 7500);
 });

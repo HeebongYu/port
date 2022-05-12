@@ -58,6 +58,10 @@
   font-weight: 200;
   white-space: nowrap;
   position: relative;
+  transition: all 0.3s;
+}
+.open__load .txt.hidden {
+  opacity: 0;
 }
 .open__load .txt::after {
   content: "";
@@ -308,6 +312,10 @@
   font-weight: 200;
   white-space: nowrap;
   position: relative;
+  transition: all 0.3;
+}
+.intro__load .txt.hidden {
+  opacity: 0;
 }
 .intro__load .txt::after {
   content: "";
