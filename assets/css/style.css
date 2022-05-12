@@ -312,7 +312,7 @@
   font-weight: 200;
   white-space: nowrap;
   position: relative;
-  transition: all 0.3;
+  transition: all 0.3s;
 }
 .intro__load .txt.hidden {
   opacity: 0;

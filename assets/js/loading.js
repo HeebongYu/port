@@ -1,3 +1,10 @@
+(function () {
+  setTimeout(() => {
+    document.body.classList.add("show");
+    scrollTo(0, 0);
+  }, 100);
+})();
+
 const openBtn = document.querySelector(".open__btn");
 const openLoad = document.querySelector(".open__load");
 const openLoadTxt = document.querySelector(".open__load .txt");
@@ -43,7 +50,7 @@ introBtn.addEventListener("click", () => {
 
   // 가상로딩 시작
   gsap.to(introLoad, {
-    duration: 2,
+    duration: 1.5,
     left: 0,
     ease: "expo.inOut",
     delay: 1,
@@ -53,7 +60,7 @@ introBtn.addEventListener("click", () => {
   gsap.to(introLoadTxt, {
     duration: 4,
     text: "이제 컨텐츠들을 즐기러 가요.",
-    delay: 3,
+    delay: 2.5,
   });
 
   // 로딩 타이핑 제거

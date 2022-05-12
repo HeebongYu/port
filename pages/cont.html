@@ -26,16 +26,13 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <style>
       body {
         background: var(--red);
-        opacity: 0;
-        transition: all 1s;
-      }
-      body.show {
-        opacity: 1;
       }
     </style>
+
     <style>
       .cont__section1,
       .cont__section2,
@@ -114,6 +111,13 @@
         height: 21vw;
         margin: 1vw;
       }
+
+      /* cont__section3 */
+      .cont__section3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
@@ -145,12 +149,14 @@
         <section class="cont__section2">
           <div class="wrap">
             <h2 class="title">LAYOUT</h2>
-            <img src="../assets/img/frame02.svg" alt="" />
-            <img src="../assets/img/frame02.svg" alt="" />
-            <img src="../assets/img/frame02.svg" alt="" />
-            <img src="../assets/img/frame02.svg" alt="" />
+            <img src="../assets/img/frame02.svg" alt="layout01" />
+            <img src="../assets/img/frame02.svg" alt="layout02" />
+            <img src="../assets/img/frame02.svg" alt="layout03" />
+            <img src="../assets/img/frame02.svg" alt="layout04" />
           </div>
         </section>
+        <!-- //cont__section2 -->
+
         <section class="cont__section3">3</section>
         <section class="cont__section4">4</section>
         <section class="cont__section5">5</section>
@@ -161,14 +167,7 @@
     <!-- //cont__page -->
 
     <!-- script -->
-    <script src="../assets/js/cont.js"></script>
-    <script>
-      (function () {
-        setTimeout(() => {
-          document.body.classList.add("show");
-          scrollTo(0, 0);
-        }, 100);
-      })();
-    </script>
+    <script src="../assets/js/loading.js"></script>
+    <script src="../assets/js/row.js"></script>
   </body>
 </html>
