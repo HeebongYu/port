@@ -35,6 +35,64 @@
       .cont__section6 {
         border: 10px solid #000;
       }
+
+      /* cont__section1 */
+      .cont__section1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cont__section1 .wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .cont__section1 .wrap .title {
+        font-family: var(--en_font);
+        color: var(--white);
+        font-size: 11vw;
+        font-weight: 700;
+        letter-spacing: -0.12em;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .cont__section1 .wrap img {
+        width: 25vw;
+        height: 25vw;
+        margin: 1vw;
+      }
+      .cont__section1 .wrap img:nth-child(2) {
+        margin-top: 5vw;
+      }
+      .cont__section1 .wrap img:nth-child(3) {
+        margin-top: -10vw;
+      }
+      .cont__section1 .wrap img:nth-child(4) {
+        margin-top: 15vw;
+      }
+
+      /* cont__section2 */
+      .cont__section2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cont__section2 .wrap {
+        position: relative;
+      }
+      .cont__section2 .wrap .title {
+        font-family: var(--en_font);
+        color: var(--white);
+        font-size: 11vw;
+        font-weight: 700;
+        letter-spacing: -0.12em;
+        writing-mode: vertical-rl;
+        position: absolute;
+        top: 0vw;
+        left: 0vw;
+      }
     </style>
   </head>
   <body>
@@ -53,8 +111,22 @@
       <!-- //header -->
 
       <main class="cont__wrap">
-        <section class="cont__section1">1</section>
-        <section class="cont__section2">2</section>
+        <section class="cont__section1">
+          <div class="wrap">
+            <h2 class="title">QUIZ</h2>
+            <img src="../assets/img/frame01.svg" alt="quiz01" />
+            <img src="../assets/img/frame01.svg" alt="quiz02" />
+            <img src="../assets/img/frame01.svg" alt="quiz03" />
+          </div>
+        </section>
+        <!-- //cont__section1 -->
+
+        <section class="cont__section2">
+          <div class="wrap">
+            <h2 class="title">LAYOUT</h2>
+            <img src="../assets/img/frame02.svg" alt="" />
+          </div>
+        </section>
         <section class="cont__section3">3</section>
         <section class="cont__section4">4</section>
         <section class="cont__section5">5</section>
