@@ -16,6 +16,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* 부드러운 이동 */
+html {
+  scroll-behavior: smooth;
+}
+
 /* 공백 초기화 */
 body,
 button,

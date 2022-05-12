@@ -1,14 +1,41 @@
-/*변수설정*/
+/* 변수설정 */
 :root {
-  /*색상*/
+  /* 색상 */
   --white: #ffffff;
+  --black: #222222;
   --green: #c1d72e;
   --greenW: #d4dd9c;
   --red: #f96f55;
   --redW: #e1ada1;
   --blue: #89e2da;
 
-  /*폰트*/
+  /* 폰트 */
   --en_font: "Josefin Sans";
   --kr_font: "Hahmlet";
+}
+
+/* header */
+.header {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+}
+.header .menu {
+  float: right;
+  margin-right: 50px;
+  font-size: 40px;
+  line-height: 60px;
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*임시*/
+.bottom {
+  width: 100%;
+  height: 20vw;
+  background: #6db722;
+  margin-top: 2vw;
 }

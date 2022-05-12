@@ -7,6 +7,7 @@
     <meta name="author" content="heebong" />
     <title>PORTFOLIO</title>
 
+    <!-- css -->
     <link rel="stylesheet" href="./assets/css/fonts.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/common.css" />
@@ -18,7 +19,7 @@
     <link rel="icon" href="./assets/icon/face128.jpg" />
   </head>
   <body>
-    <div id="open">
+    <div class="open__page">
       <div class="open__wrap">
         <h1 class="open__title">HI, PLEASE ENJOY MY PORTFOLIO.</h1>
         <p class="open__desc">
@@ -26,37 +27,18 @@
         </p>
         <button class="open__btn">ENJOY</button>
       </div>
-      <div class="load__wrap">
-        <p class="load__desc">
-          <!-- 즐기실 준비 됬나요? 먼저 저에 대하여 알고 가요. -->
-        </p>
+      <!-- //open__wrap -->
+
+      <div class="open__load">
+        <p class="txt"></p>
       </div>
+      <!-- //open__load -->
     </div>
-    <!-- //open__wrap -->
+    <!-- //open__page -->
 
     <!-- script -->
-    <script src="./assets/js/gsap.min.js"></script>
-    <script src="./assets/js/TextPlugin.min.js"></script>
-    <script>
-      const openBtn = document.querySelector(".open__btn");
-      const loadWrap = document.querySelector(".load__wrap");
-      const loadDesc = document.querySelector(".load__desc");
-
-      openBtn.addEventListener("click", () => {
-        gsap.to(loadWrap, {
-          duration: 1.5,
-          top: 0,
-          ease: "expo.inOut",
-        });
-        gsap.to(".load__desc", {
-          duration: 6,
-          text: "즐기실 준비 됐나요? 먼저 저에 대하여 알고 가요.",
-          delay: 1.5,
-        });
-        setTimeout(() => {
-          //location.href = "./intro.html";
-        }, 6300);
-      });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="./assets/js/loading.js"></script>
   </body>
 </html>
