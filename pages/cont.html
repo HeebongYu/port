@@ -81,6 +81,11 @@
       }
       .cont__section2 .wrap {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-left: 5vw;
       }
       .cont__section2 .wrap .title {
         font-family: var(--en_font);
@@ -90,8 +95,14 @@
         letter-spacing: -0.12em;
         writing-mode: vertical-rl;
         position: absolute;
-        top: 0vw;
-        left: 0vw;
+        top: 50%;
+        left: 2vw;
+        transform: translateY(-50%);
+      }
+      .cont__section2 .wrap img {
+        width: 32vw;
+        height: 21vw;
+        margin: 1vw;
       }
     </style>
   </head>
@@ -124,6 +135,9 @@
         <section class="cont__section2">
           <div class="wrap">
             <h2 class="title">LAYOUT</h2>
+            <img src="../assets/img/frame02.svg" alt="" />
+            <img src="../assets/img/frame02.svg" alt="" />
+            <img src="../assets/img/frame02.svg" alt="" />
             <img src="../assets/img/frame02.svg" alt="" />
           </div>
         </section>
