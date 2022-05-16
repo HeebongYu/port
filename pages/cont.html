@@ -185,10 +185,9 @@
       .cont__section4 .wrap .title {
         font-family: var(--en_font);
         color: var(--white);
-        font-size: 10vw;
+        font-size: 11vw;
         font-weight: 700;
         letter-spacing: -0.12em;
-        line-height: 10vw;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -208,8 +207,93 @@
       }
       .cont__section5 .wrap {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
       }
-      .cont__section5 .wrap img {
+      .cont__section5 .wrap .title {
+        font-family: var(--en_font);
+        color: var(--white);
+        font-size: 11vw;
+        font-weight: 700;
+        letter-spacing: -0.12em;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .cont__section5 .wrap img:nth-child(2) {
+        width: 32%;
+        margin-top: 8%;
+      }
+      .cont__section5 .wrap img:nth-child(3) {
+        width: 28%;
+        margin-bottom: 12%;
+        margin-left: 1%;
+      }
+      .cont__section5 .wrap img:nth-child(4) {
+        width: 18%;
+        margin-top: 20%;
+        margin-left: -4%;
+      }
+      .cont__section5 .wrap img:nth-child(5) {
+        width: 20%;
+      }
+
+      /* cont__section6 */
+      .cont__section6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cont__section6 .wrap {
+        display: flex;
+        flex-direction: row;
+      }
+      .cont__section6 .wrap .title {
+        font-family: var(--en_font);
+        color: var(--white);
+        font-size: 11vw;
+        font-weight: 700;
+        letter-spacing: -0.12em;
+        writing-mode: vertical-rl;
+        z-index: 1000;
+      }
+      .cont__section6 .wrap .cont {
+        margin-left: -5vw;
+        width: 70%;
+        position: relative;
+      }
+      .cont__section6 .wrap .cont .tv {
+      }
+      .cont__section6 .wrap .cont .power {
+        position: absolute;
+        right: 6%;
+        top: 3vw;
+        width: 8%;
+      }
+      .cont__section6 .wrap .another {
+        background-color: #fff;
+        width: 15vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .cont__section6 .wrap .another .txt {
+        font-family: var(--en_font);
+        color: var(--black);
+        font-size: 1.6vw;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+      .cont__section6 .wrap .another .boxs {
+        display: flex;
+        justify-content: space-between;
+      }
+      .cont__section6 .wrap .another .boxs .box {
+        width: 4vw;
+        height: 4vw;
+        border: 1px solid #000;
       }
     </style>
   </head>
@@ -232,9 +316,9 @@
         <section class="cont__section1">
           <div class="wrap">
             <h2 class="title">QUIZ</h2>
-            <img src="../assets/img/frame01.svg" alt="quiz01" />
-            <img src="../assets/img/frame01.svg" alt="quiz02" />
-            <img src="../assets/img/frame01.svg" alt="quiz03" />
+            <img src="../assets/img/frame01.svg" alt="quiz01" id="quiz01" />
+            <img src="../assets/img/frame01.svg" alt="quiz02" id="quiz02" />
+            <img src="../assets/img/frame01.svg" alt="quiz03" id="quiz03" />
           </div>
         </section>
         <!-- //cont__section1 -->
@@ -242,10 +326,10 @@
         <section class="cont__section2">
           <div class="wrap">
             <h2 class="title">LAYOUT</h2>
-            <img src="../assets/img/frame02.svg" alt="layout01" />
-            <img src="../assets/img/frame02.svg" alt="layout02" />
-            <img src="../assets/img/frame02.svg" alt="layout03" />
-            <img src="../assets/img/frame02.svg" alt="layout04" />
+            <img src="../assets/img/frame02.svg" alt="layout01" id="layout01" />
+            <img src="../assets/img/frame02.svg" alt="layout02" id="layout02" />
+            <img src="../assets/img/frame02.svg" alt="layout03" id="layout03" />
+            <img src="../assets/img/frame02.svg" alt="layout04" id="layout04" />
           </div>
         </section>
         <!-- //cont__section2 -->
@@ -254,13 +338,29 @@
           <div class="wrap">
             <div class="left">
               <h2 class="title">REFERENCE</h2>
-              <img src="../assets/img/frame03.svg" alt="reference01" />
-              <img src="../assets/img/frame03.svg" alt="reference02" />
+              <img
+                src="../assets/img/frame03.svg"
+                alt="reference01"
+                id="reference01"
+              />
+              <img
+                src="../assets/img/frame03.svg"
+                alt="reference02"
+                id="reference02"
+              />
             </div>
             <div class="right">
               <h2 class="title">illustrator</h2>
-              <img src="../assets/img/drawing01.png" alt="" />
-              <img src="../assets/img/drawing02.png" alt="" />
+              <img
+                src="../assets/img/drawing01.png"
+                alt="drawing01"
+                id="drawing01"
+              />
+              <img
+                src="../assets/img/drawing02.png"
+                alt="drawing02"
+                id="drawing02"
+              />
             </div>
           </div>
         </section>
@@ -269,24 +369,42 @@
         <section class="cont__section4">
           <div class="wrap">
             <h2 class="title">SLIDER</h2>
-            <img src="../assets/img/frame02.svg" alt="slider01" />
-            <img src="../assets/img/frame02.svg" alt="slider02" />
-            <img src="../assets/img/frame02.svg" alt="slider03" />
-            <img src="../assets/img/frame02.svg" alt="slider04" />
+            <img src="../assets/img/frame02.svg" alt="slider01" id="slider01" />
+            <img src="../assets/img/frame02.svg" alt="slider02" id="slider02" />
+            <img src="../assets/img/frame02.svg" alt="slider03" id="slider03" />
+            <img src="../assets/img/frame02.svg" alt="slider04" id="slider04" />
           </div>
         </section>
         <!-- //cont__section4 -->
 
         <section class="cont__section5">
           <div class="wrap">
-            <!-- <h2 class="title">MOUSE</h2> -->
+            <h2 class="title">MOUSE</h2>
             <img src="../assets/img/frame04.svg" alt="mouse01" />
             <img src="../assets/img/frame04.svg" alt="mouse02" />
             <img src="../assets/img/frame04.svg" alt="mouse03" />
             <img src="../assets/img/frame04.svg" alt="mouse04" />
           </div>
         </section>
-        <section class="cont__section6">6</section>
+        <!-- //cont__section5 -->
+
+        <section class="cont__section6">
+          <div class="wrap">
+            <h2 class="title">GAME</h2>
+            <div class="cont">
+              <img class="tv" src="../assets/img/tv.png" alt="" />
+              <img class="power" src="../assets/img/power.png" alt="" />
+            </div>
+            <div class="another">
+              <div class="txt">Another Game</div>
+              <div class="boxs">
+                <button class="box"></button>
+                <button class="box"></button>
+              </div>
+              <button>CONTINUE</button>
+            </div>
+          </div>
+        </section>
       </main>
       <!-- //cont__wrap -->
     </div>
