@@ -32,273 +32,20 @@
         background: var(--red);
       }
     </style>
-
-    <style>
-      .cont__section1,
-      .cont__section2,
-      .cont__section3,
-      .cont__section4,
-      .cont__section5,
-      .cont__section6 {
-        border: 10px solid #000;
-      }
-
-      /* cont__section1 */
-      .cont__section1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section1 .wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .cont__section1 .wrap .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 11vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      .cont__section1 .wrap img {
-        width: 25vw;
-        height: 25vw;
-        margin: 1vw;
-      }
-      .cont__section1 .wrap img:nth-child(2) {
-        margin-top: 5vw;
-      }
-      .cont__section1 .wrap img:nth-child(3) {
-        margin-top: -10vw;
-      }
-      .cont__section1 .wrap img:nth-child(4) {
-        margin-top: 15vw;
-      }
-
-      /* cont__section2 */
-      .cont__section2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section2 .wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-left: 5vw;
-      }
-      .cont__section2 .wrap .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 11vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        writing-mode: vertical-rl;
-        position: absolute;
-        top: 50%;
-        left: 2vw;
-        transform: translateY(-50%);
-      }
-      .cont__section2 .wrap img {
-        width: 36vw;
-        height: 20vw;
-        margin: 1vw;
-      }
-
-      /* cont__section3 */
-      .cont__section3 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section3 .wrap {
-        display: flex;
-        justify-content: space-between;
-      }
-      .cont__section3 .wrap .left {
-        width: 55%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .cont__section3 .wrap .left .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 10vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        line-height: 10vw;
-      }
-      .cont__section3 .wrap .left img {
-        width: 23vw;
-        height: 32vw;
-        margin: 1vw;
-      }
-      .cont__section3 .wrap .right {
-        width: 45%;
-        text-align: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        position: relative;
-      }
-      .cont__section3 .wrap .right .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 10vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        line-height: 10vw;
-      }
-      .cont__section3 .wrap .right img {
-        width: 23vw;
-        height: 32vw;
-        margin: 1vw;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .cont__section3 .wrap .right img:nth-child(3) {
-        opacity: 0.5;
-      }
-
-      /* cont__section4 */
-      .cont__section4 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section4 .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: space-between;
-        position: relative;
-      }
-      .cont__section4 .wrap .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 11vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      .cont__section4 .wrap img {
-        width: 36vw;
-        height: 20vw;
-        margin: 1vw;
-      }
-
-      /* cont__section5 */
-      .cont__section5 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section5 .wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
-      .cont__section5 .wrap .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 11vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      .cont__section5 .wrap img:nth-child(2) {
-        width: 32%;
-        margin-top: 8%;
-      }
-      .cont__section5 .wrap img:nth-child(3) {
-        width: 28%;
-        margin-bottom: 12%;
-        margin-left: 1%;
-      }
-      .cont__section5 .wrap img:nth-child(4) {
-        width: 18%;
-        margin-top: 20%;
-        margin-left: -4%;
-      }
-      .cont__section5 .wrap img:nth-child(5) {
-        width: 20%;
-      }
-
-      /* cont__section6 */
-      .cont__section6 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .cont__section6 .wrap {
-        display: flex;
-        flex-direction: row;
-      }
-      .cont__section6 .wrap .title {
-        font-family: var(--en_font);
-        color: var(--white);
-        font-size: 11vw;
-        font-weight: 700;
-        letter-spacing: -0.12em;
-        writing-mode: vertical-rl;
-        z-index: 1000;
-      }
-      .cont__section6 .wrap .cont {
-        margin-left: -5vw;
-        width: 70%;
-        position: relative;
-      }
-      .cont__section6 .wrap .cont .tv {
-      }
-      .cont__section6 .wrap .cont .power {
-        position: absolute;
-        right: 6%;
-        top: 3vw;
-        width: 8%;
-      }
-      .cont__section6 .wrap .another {
-        background-color: #fff;
-        width: 15vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .cont__section6 .wrap .another .txt {
-        font-family: var(--en_font);
-        color: var(--black);
-        font-size: 1.6vw;
-        font-weight: 400;
-        white-space: nowrap;
-      }
-      .cont__section6 .wrap .another .boxs {
-        display: flex;
-        justify-content: space-between;
-      }
-      .cont__section6 .wrap .another .boxs .box {
-        width: 4vw;
-        height: 4vw;
-        border: 1px solid #000;
-      }
-    </style>
   </head>
   <body>
     <div class="cont__page">
+      <nav class="nav">
+        <ul>
+          <li><a href="../open.html">open</a></li>
+          <li><a href="./intro.html">intro</a></li>
+          <li><a href="./cont.html">cont</a></li>
+          <li><a href="./site.html">site</a></li>
+          <li><a href="./ending.html">ending</a></li>
+        </ul>
+      </nav>
+      <!-- //nav -->
+
       <header class="header">
         <div class="dots">
           <div class="dot active"></div>
@@ -312,106 +59,155 @@
       </header>
       <!-- //header -->
 
-      <main class="cont__wrap">
-        <section class="cont__section1">
-          <div class="wrap">
-            <h2 class="title">QUIZ</h2>
-            <img src="../assets/img/frame01.svg" alt="quiz01" id="quiz01" />
-            <img src="../assets/img/frame01.svg" alt="quiz02" id="quiz02" />
-            <img src="../assets/img/frame01.svg" alt="quiz03" id="quiz03" />
-          </div>
-        </section>
-        <!-- //cont__section1 -->
+      <div class="cont__wrap">
+        <main class="cont__cont">
+          <section class="cont__section1">
+            <div class="wrap">
+              <h2 class="title">QUIZ</h2>
+              <img src="../assets/img/frame01.svg" alt="quiz01" id="quiz01" />
+              <img src="../assets/img/frame01.svg" alt="quiz02" id="quiz02" />
+              <img src="../assets/img/frame01.svg" alt="quiz03" id="quiz03" />
+            </div>
+          </section>
+          <!-- //cont__section1 -->
 
-        <section class="cont__section2">
-          <div class="wrap">
-            <h2 class="title">LAYOUT</h2>
-            <img src="../assets/img/frame02.svg" alt="layout01" id="layout01" />
-            <img src="../assets/img/frame02.svg" alt="layout02" id="layout02" />
-            <img src="../assets/img/frame02.svg" alt="layout03" id="layout03" />
-            <img src="../assets/img/frame02.svg" alt="layout04" id="layout04" />
-          </div>
-        </section>
-        <!-- //cont__section2 -->
-
-        <section class="cont__section3">
-          <div class="wrap">
-            <div class="left">
-              <h2 class="title">REFERENCE</h2>
+          <section class="cont__section2">
+            <div class="wrap">
+              <h2 class="title">LAYOUT</h2>
               <img
-                src="../assets/img/frame03.svg"
-                alt="reference01"
-                id="reference01"
+                src="../assets/img/frame02.svg"
+                alt="layout01"
+                id="layout01"
               />
               <img
-                src="../assets/img/frame03.svg"
-                alt="reference02"
-                id="reference02"
+                src="../assets/img/frame02.svg"
+                alt="layout02"
+                id="layout02"
+              />
+              <img
+                src="../assets/img/frame02.svg"
+                alt="layout03"
+                id="layout03"
+              />
+              <img
+                src="../assets/img/frame02.svg"
+                alt="layout04"
+                id="layout04"
               />
             </div>
-            <div class="right">
-              <h2 class="title">illustrator</h2>
-              <img
-                src="../assets/img/drawing01.png"
-                alt="drawing01"
-                id="drawing01"
-              />
-              <img
-                src="../assets/img/drawing02.png"
-                alt="drawing02"
-                id="drawing02"
-              />
-            </div>
-          </div>
-        </section>
-        <!-- //cont__section3 -->
+          </section>
+          <!-- //cont__section2 -->
 
-        <section class="cont__section4">
-          <div class="wrap">
-            <h2 class="title">SLIDER</h2>
-            <img src="../assets/img/frame02.svg" alt="slider01" id="slider01" />
-            <img src="../assets/img/frame02.svg" alt="slider02" id="slider02" />
-            <img src="../assets/img/frame02.svg" alt="slider03" id="slider03" />
-            <img src="../assets/img/frame02.svg" alt="slider04" id="slider04" />
-          </div>
-        </section>
-        <!-- //cont__section4 -->
-
-        <section class="cont__section5">
-          <div class="wrap">
-            <h2 class="title">MOUSE</h2>
-            <img src="../assets/img/frame04.svg" alt="mouse01" />
-            <img src="../assets/img/frame04.svg" alt="mouse02" />
-            <img src="../assets/img/frame04.svg" alt="mouse03" />
-            <img src="../assets/img/frame04.svg" alt="mouse04" />
-          </div>
-        </section>
-        <!-- //cont__section5 -->
-
-        <section class="cont__section6">
-          <div class="wrap">
-            <h2 class="title">GAME</h2>
-            <div class="cont">
-              <img class="tv" src="../assets/img/tv.png" alt="" />
-              <img class="power" src="../assets/img/power.png" alt="" />
-            </div>
-            <div class="another">
-              <div class="txt">Another Game</div>
-              <div class="boxs">
-                <button class="box"></button>
-                <button class="box"></button>
+          <section class="cont__section3">
+            <div class="wrap">
+              <div class="left">
+                <h2 class="title">REFERENCE</h2>
+                <img
+                  src="../assets/img/frame03.svg"
+                  alt="reference01"
+                  id="reference01"
+                />
+                <img
+                  src="../assets/img/frame03.svg"
+                  alt="reference02"
+                  id="reference02"
+                />
               </div>
-              <button>CONTINUE</button>
+              <div class="right">
+                <h2 class="title">illustrator</h2>
+                <img
+                  src="../assets/img/drawing01.png"
+                  alt="drawing01"
+                  id="drawing01"
+                />
+                <img
+                  src="../assets/img/drawing02.png"
+                  alt="drawing02"
+                  id="drawing02"
+                />
+              </div>
             </div>
+          </section>
+          <!-- //cont__section3 -->
+
+          <section class="cont__section4">
+            <div class="wrap">
+              <h2 class="title">SLIDER</h2>
+              <img
+                src="../assets/img/frame02.svg"
+                alt="slider01"
+                id="slider01"
+              />
+              <img
+                src="../assets/img/frame02.svg"
+                alt="slider02"
+                id="slider02"
+              />
+              <img
+                src="../assets/img/frame02.svg"
+                alt="slider03"
+                id="slider03"
+              />
+              <img
+                src="../assets/img/frame02.svg"
+                alt="slider04"
+                id="slider04"
+              />
+            </div>
+          </section>
+          <!-- //cont__section4 -->
+
+          <section class="cont__section5">
+            <div class="wrap">
+              <h2 class="title">MOUSE</h2>
+              <img src="../assets/img/frame04.svg" alt="mouse01" />
+              <img src="../assets/img/frame04.svg" alt="mouse02" />
+              <img src="../assets/img/frame04.svg" alt="mouse03" />
+              <img src="../assets/img/frame04.svg" alt="mouse04" />
+            </div>
+          </section>
+          <!-- //cont__section5 -->
+
+          <section class="cont__section6">
+            <div class="wrap">
+              <h2 class="title">GAME</h2>
+              <div class="cont">
+                <img class="tv" src="../assets/img/tv.png" alt="" />
+                <img class="power" src="../assets/img/power.png" alt="" />
+              </div>
+              <div class="another__wrap">
+                <div class="another">
+                  <div class="txt">Another Game</div>
+                  <div class="boxs">
+                    <button class="box">
+                      <div class="material-icons">chevron_left</div>
+                    </button>
+                    <button class="box">
+                      <div class="material-icons">navigate_next</div>
+                    </button>
+                  </div>
+                  <button class="cont__btn">CONTINUE</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //cont__section6 -->
+
+          <div class="cont__load">
+            <p class="txt"></p>
           </div>
-        </section>
-      </main>
-      <!-- //cont__wrap -->
+          <!-- //cont__load -->
+        </main>
+        <!-- //cont__cont -->
+      </div>
     </div>
     <!-- //cont__page -->
 
     <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
     <script src="../assets/js/loading.js"></script>
-    <script src="../assets/js/row.js"></script>
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/cont.js"></script>
   </body>
 </html>
