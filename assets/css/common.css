@@ -16,7 +16,6 @@
 
 /* body */
 body {
-  background: var(--red);
   opacity: 0;
   transition: all 1s;
 }
@@ -82,7 +81,7 @@ body.show {
 }
 
 /*임시*/
-.bottom {
+.intro__page .bottom {
   width: 100%;
   height: 20vw;
   background: #6db722;

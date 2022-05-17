@@ -30,7 +30,28 @@
     <style>
       body {
         background-color: var(--blue);
-        height: 5000px;
+      }
+      .site__page {
+        width: 100%;
+        height: 100vh;
+      }
+      .site__wrap {
+        max-width: 800px;
+        width: 98%;
+        height: 100%;
+        margin: 0 auto;
+        /* border: 1px solid #000; */
+      }
+      .site__section01 {
+        padding-top: 110px;
+        padding-bottom: 50px;
+        height: 100%;
+      }
+      .site__section01 .vscode {
+        border: 1px solid var(--white);
+        background: var(--white);
+        height: 100%;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -51,13 +72,29 @@
         <button class="material-icons menu">menu</button>
       </header>
       <!-- //header -->
+
+      <div class="site__wrap">
+        <section class="site__section01">
+          <div class="vscode">
+            <div class="top"></div>
+            <div class="bottom">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
     <!-- //site__page -->
 
     <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="../assets/js/skrollr.min.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/menu.js"></script>
+    <script>
+      var s = skrollr.init();
+    </script>
   </body>
 </html>
