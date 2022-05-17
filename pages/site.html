@@ -28,34 +28,140 @@
     />
 
     <style>
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        min-width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        z-index: 10000;
+      }
+
       body {
         background-color: var(--blue);
       }
+      .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+
+      /* site__page */
       .site__page {
         width: 100%;
         height: 100vh;
+        position: fixed;
       }
-      .site__wrap {
+
+      /* site__section01 */
+      .site__section01,
+      .site__section03,
+      .site__section05 {
         max-width: 800px;
         width: 98%;
-        height: 100%;
+        height: 80%;
         margin: 0 auto;
-        /* border: 1px solid #000; */
       }
-      .site__section01 {
-        padding-top: 110px;
-        padding-bottom: 50px;
-        height: 100%;
-      }
-      .site__section01 .vscode {
-        border: 1px solid var(--white);
+      .site__section01 .vscode,
+      .site__section03 .vscode,
+      .site__section05 .vscode {
         background: var(--white);
-        height: 100%;
         border-radius: 10px;
+        overflow: hidden;
+      }
+      .site__section01 .vscode .top,
+      .site__section03 .vscode .top,
+      .site__section05 .vscode .top {
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .site__section01 .vscode .top span,
+      .site__section03 .vscode .top span,
+      .site__section05 .vscode .top span {
+        width: 12px;
+        height: 12px;
+        border: 1px solid var(--whiteB);
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+      .site__section01 .vscode .top span:first-child,
+      .site__section03 .vscode .top span:first-child,
+      .site__section05 .vscode .top span:first-child {
+        margin-left: 20px;
+      }
+      .site__section01 .vscode .bottom,
+      .site__section03 .vscode .bottom,
+      .site__section05 .vscode .bottom {
+        height: calc(100% - 54px);
+        background-color: var(--black);
+        display: flex;
+      }
+      .site__section01 .vscode .bottom .left,
+      .site__section03 .vscode .bottom .left,
+      .site__section05 .vscode .bottom .left {
+        width: 25%;
+        border-right: 1px solid var(--blackW);
+      }
+      .site__section01 .vscode .bottom .right,
+      .site__section03 .vscode .bottom .right,
+      .site__section05 .vscode .bottom .right {
+        width: 75%;
+      }
+
+      /* site__section02 */
+      .site__section02,
+      .site__section04 {
+        max-width: 800px;
+        width: 98%;
+        height: 80%;
+        margin: 0 auto;
+      }
+      .site__section02 .sites,
+      .site__section04 .sites {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+          "site01 site02 "
+          "site03 site03 ";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1.5fr 2fr;
+        grid-gap: 20px;
+      }
+      .site__section02 .sites .site01,
+      .site__section04 .sites .site01 {
+        grid-area: site01;
+        border-radius: 10px;
+
+        background-color: var(--white);
+      }
+      .site__section02 .sites .site02,
+      .site__section04 .sites .site02 {
+        grid-area: site02;
+        border-radius: 10px;
+
+        background-color: var(--white);
+      }
+      .site__section02 .sites .site03,
+      .site__section04 .sites .site03 {
+        grid-area: site03;
+        border-radius: 10px 10px 0 0;
+
+        background-color: var(--white);
       }
     </style>
   </head>
   <body>
+    <div class="scrollTop">000</div>
+
     <div class="site__page">
       <nav class="nav">
         <ul>
@@ -73,17 +179,210 @@
       </header>
       <!-- //header -->
 
+      <div class="site__title">
+        <div
+          class="txt"
+          data-1000="opacity: 1; display: block;"
+          data-2000="opacity: 0; display: block;"
+          data-2001="opacity: 0; display: none;"
+        >
+          MADE IN HEEBONG<br />
+          PORTFOLIO SITE
+        </div>
+        <!-- //PORTFOLIO SITE -->
+
+        <div
+          class="txt"
+          data-0="opacity: 0; display: none;"
+          data-2000="opacity: 0; display: block;"
+          data-3000="opacity: 1; display: block;"
+          data-7000="opacity: 1; display: block;"
+          data-8000="opacity: 0; display: block;"
+          data-8001="opacity: 0; display: none;"
+        >
+          MADE IN HEEBONG<br />
+          PHP SITE
+        </div>
+        <!-- //PHP SITE -->
+
+        <div
+          class="txt"
+          data-0="opacity: 0; display: none;"
+          data-8000="opacity: 0; display: block;"
+          data-9000="opacity: 1; display: block;"
+          data-13000="opacity: 1; display: block;"
+          data-14000="opacity: 0; display: block;"
+          data-14001="opacity: 0; display: none;"
+        >
+          MADE IN HEEBONG<br />
+          REACT SITE
+        </div>
+        <!-- //REACT SITE -->
+      </div>
+      <!-- //site__title -->
+
+      <div class="site__another">
+        <div class="another">
+          <div class="txt">Another Game</div>
+          <div class="boxs">
+            <button class="box">
+              <div class="material-icons">chevron_left</div>
+            </button>
+            <button class="box">
+              <div class="material-icons">navigate_next</div>
+            </button>
+          </div>
+          <button class="cont__btn">CONTINUE</button>
+        </div>
+      </div>
+      <!-- //site__another -->
+
       <div class="site__wrap">
-        <section class="site__section01">
-          <div class="vscode">
-            <div class="top"></div>
+        <section
+          class="site__section01 fixed"
+          data-2000="display: block;"
+          data-2001="display: none;"
+        >
+          <div
+            class="vscode"
+            data-0="width: 100%; height: 100%;"
+            data-1000="width: 100%; height: 100%;"
+            data-2000="width: 100%; height: 0%;"
+          >
+            <div class="top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <div class="bottom">
               <div class="left"></div>
               <div class="right"></div>
             </div>
           </div>
         </section>
+        <!-- //site__section01 -->
+
+        <section
+          class="site__section02 fixed"
+          data-0="display: none;"
+          data-2000="display: block;"
+          data-5000="display: block;"
+          data-5001="display: none;"
+        >
+          <div class="sites">
+            <div
+              class="site01"
+              data-2000="width: 100%; height: 0%;"
+              data-3000="width: 100%; height: 100%;"
+              data-4000="width: 100%; height: 100%;"
+              data-5000="width: 100%; height: 0%;"
+            ></div>
+            <div
+              class="site02"
+              data-2000="width: 0%; height: 100%;"
+              data-3000="width: 100%; height: 100%;"
+              data-4000="width: 100%; height: 100%;"
+              data-5000="width: 0%; height: 100%;"
+            ></div>
+            <div
+              class="site03"
+              data-2000="width: 100%; height: 0%;"
+              data-3000="width: 100%; height: 100%;"
+              data-4000="width: 100%; height: 100%;"
+              data-5000="width: 100%; height: 0%;"
+            ></div>
+          </div>
+        </section>
+        <!-- //site__section02 -->
+
+        <section
+          class="site__section03 fixed"
+          data-0="display: none;"
+          data-5000="display: block;"
+          data-8000="display: block;"
+          data-8001="display: none;"
+        >
+          <div
+            class="vscode fixed"
+            data-5000="width: 100%; height: 0%;"
+            data-6000="width: 100%; height: 100%;"
+            data-7000="width: 100%; height: 100%;"
+            data-8000="width: 100%; height: 0%;"
+          >
+            <div class="top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="bottom">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </section>
+        <!-- //site__section03 -->
+
+        <section
+          class="site__section04 fixed"
+          data-0="display: none;"
+          data-8000="display: block;"
+          data-11000="display: block;"
+          data-11001="display: none;"
+        >
+          <div class="sites">
+            <div
+              class="site01"
+              data-8000="width: 100%; height: 0%;"
+              data-9000="width: 100%; height: 100%;"
+              data-10000="width: 100%; height: 100%;"
+              data-11000="width: 100%; height: 0%;"
+            ></div>
+            <div
+              class="site02"
+              data-8000="width: 0%; height: 100%;"
+              data-9000="width: 100%; height: 100%;"
+              data-10000="width: 100%; height: 100%;"
+              data-11000="width: 0%; height: 100%;"
+            ></div>
+            <div
+              class="site03"
+              data-8000="width: 100%; height: 0%;"
+              data-9000="width: 100%; height: 100%;"
+              data-10000="width: 100%; height: 100%;"
+              data-11000="width: 100%; height: 0%;"
+            ></div>
+          </div>
+        </section>
+        <!-- //site__section04 -->
+
+        <section
+          class="site__section05 fixed"
+          data-0="display: none;"
+          data-11000="display: block;"
+          data-14000="display: block;"
+          data-14001="display: none;"
+        >
+          <div
+            class="vscode fixed"
+            data-11000="width: 100%; height: 0%;"
+            data-12000="width: 100%; height: 100%;"
+            data-13000="width: 100%; height: 100%;"
+            data-14000="width: 100%; height: 0%;"
+          >
+            <div class="top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="bottom">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </section>
+        <!-- //site__section05 -->
       </div>
+      <!-- //site__wrap -->
     </div>
     <!-- //site__page -->
 
@@ -95,6 +394,16 @@
     <script src="../assets/js/menu.js"></script>
     <script>
       var s = skrollr.init();
+
+      function scroll() {
+        let scrollTop = document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+
+        //document.querySelector(".section1__bg img").style.width = scrollTop + "px";
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
   </body>
 </html>

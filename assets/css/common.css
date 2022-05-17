@@ -2,7 +2,9 @@
 :root {
   /* 색상 */
   --white: #ffffff;
+  --whiteB: #dddddd;
   --black: #222222;
+  --blackW: #494949;
   --green: #c1d72e;
   --greenW: #d4dd9c;
   --red: #f96f55;
