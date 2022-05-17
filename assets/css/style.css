@@ -695,8 +695,9 @@
   margin-left: -1.6vw;
 }
 @media (max-width: 1200px) {
-  .site__title {
-    display: none;
+  .site__title,
+  .site__another {
+    display: none !important;
   }
 }
 

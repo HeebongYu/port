@@ -43,13 +43,11 @@
 
       body {
         background-color: var(--blue);
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
       }
-      .fixed {
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
+      body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
       }
 
       /* site__page */
@@ -59,7 +57,7 @@
         position: fixed;
       }
 
-      /* site__section01 */
+      /* site__section01, site__section03, site__section05 */
       .site__section01,
       .site__section03,
       .site__section05 {
@@ -107,16 +105,24 @@
       .site__section01 .vscode .bottom .left,
       .site__section03 .vscode .bottom .left,
       .site__section05 .vscode .bottom .left {
-        width: 25%;
+        min-width: 180px;
         border-right: 1px solid var(--blackW);
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .site__section01 .vscode .bottom .left::-webkit-scrollbar,
+      .site__section03 .vscode .bottom .left::-webkit-scrollbar,
+      .site__section05 .vscode .bottom .left::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
       }
       .site__section01 .vscode .bottom .right,
       .site__section03 .vscode .bottom .right,
       .site__section05 .vscode .bottom .right {
-        width: 75%;
+        width: 70%;
       }
 
-      /* site__section02 */
+      /* site__section02, site__section04 */
       .site__section02,
       .site__section04 {
         max-width: 800px;
@@ -156,6 +162,94 @@
         border-radius: 10px 10px 0 0;
 
         background-color: var(--white);
+      }
+
+      .site__wrap .left {
+        color: var(--white);
+      }
+      .site__wrap .left ul {
+        padding-top: 5px;
+      }
+      .site__wrap .left li {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        padding: 3px 0;
+      }
+      .site__wrap .left .line {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .site__wrap .left .txt {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .site__wrap .left .assets {
+        background: url(../assets/icon/folder-resource.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .pages {
+        background: url(../assets/icon/folder-views-open.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .cssFo {
+        background: url(../assets/icon/folder-css.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .jsFo {
+        background: url(../assets/icon/folder-javascript.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .html {
+        background: url(../assets/icon/html.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .css {
+        background: url(../assets/icon/css.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .js {
+        background: url(../assets/icon/javascript.svg);
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      .site__wrap .left .floor01 li.folder {
+        margin-left: 4px;
+      }
+      .site__wrap .left .floor02 li.folder {
+        margin-left: 16px;
+      }
+      .site__wrap .left .floor03 li.folder {
+        margin-left: 16px;
+      }
+      .site__wrap .left .floor01 li.file {
+        margin-left: 24px;
+      }
+      .site__wrap .left .floor02 li.file {
+        margin-left: 36px;
+      }
+      .site__wrap .left .floor03 li.file {
+        margin-left: 36px;
+      }
+
+      .site__wrap .left .floor02,
+      .site__wrap .left .floor03 {
+        display: none;
       }
     </style>
   </head>
@@ -255,7 +349,146 @@
               <span></span>
             </div>
             <div class="bottom">
-              <div class="left"></div>
+              <div class="left">
+                <ul class="floor01">
+                  <li class="folder">
+                    <span id="assetsF1" class="line">
+                      <span class="material-icons">keyboard_arrow_right</span>
+                      <span class="assets"></span>
+                      <span class="txt">assets</span>
+                    </span>
+                    <ul class="floor02">
+                      <li class="folder">
+                        <span id="cssF2" class="line">
+                          <span class="material-icons"
+                            >keyboard_arrow_right</span
+                          >
+                          <span class="cssFo"></span>
+                          <span class="txt">css</span>
+                        </span>
+                        <ul class="floor03">
+                          <li class="file">
+                            <span class="line">
+                              <span class="css"></span>
+                              <span class="txt">fonts.css</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="css"></span>
+                              <span class="txt">reset.css</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="css"></span>
+                              <span class="txt">common.css</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="css"></span>
+                              <span class="txt">style.css</span>
+                            </span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="folder">
+                        <span id="jsF2" class="line">
+                          <span class="material-icons"
+                            >keyboard_arrow_right</span
+                          >
+                          <span class="jsFo"></span>
+                          <span class="txt">js</span>
+                        </span>
+                        <ul class="floor03">
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">loading.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">menu.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">open.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">intro.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">cont.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">site.js</span>
+                            </span>
+                          </li>
+                          <li class="file">
+                            <span class="line">
+                              <span class="js"></span>
+                              <span class="txt">ending.js</span>
+                            </span>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="folder">
+                    <span id="pagesF1" class="line">
+                      <span class="material-icons">keyboard_arrow_right</span>
+                      <span class="pages"></span>
+                      <span class="txt">pages</span>
+                    </span>
+                    <ul class="floor02">
+                      <li class="file">
+                        <span class="line">
+                          <span class="html"></span>
+                          <span class="txt">intro.html</span>
+                        </span>
+                      </li>
+                      <li class="file">
+                        <span class="line">
+                          <span class="html"></span>
+                          <span class="txt">cont.html</span>
+                        </span>
+                      </li>
+                      <li class="file">
+                        <span class="line">
+                          <span class="html"></span>
+                          <span class="txt">site.html</span>
+                        </span>
+                      </li>
+                      <li class="file">
+                        <span class="line">
+                          <span class="html"></span>
+                          <span class="txt">ending.html</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="file">
+                    <span class="line">
+                      <span class="html"></span>
+                      <span class="txt">open.html</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
               <div class="right"></div>
             </div>
           </div>
@@ -392,18 +625,59 @@
     <script src="../assets/js/skrollr.min.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/menu.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>
       var s = skrollr.init();
 
       function scroll() {
         let scrollTop = document.documentElement.scrollTop;
         document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-
-        //document.querySelector(".section1__bg img").style.width = scrollTop + "px";
-
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      const assetsF1 = document.querySelector("#assetsF1");
+      const pagesF1 = document.querySelector("#pagesF1");
+      const cssF2 = document.querySelector("#cssF2");
+      const jsF2 = document.querySelector("#jsF2");
+
+      function arrow(el) {
+        let answer = "";
+        if (el === "keyboard_arrow_right") {
+          answer = "keyboard_arrow_down";
+        } else {
+          answer = "keyboard_arrow_right";
+        }
+        return answer;
+      }
+
+      assetsF1.addEventListener("click", () => {
+        $(assetsF1).next().toggle();
+        $(assetsF1)
+          .find(".material-icons")
+          .text(arrow($(assetsF1).find(".material-icons").text()));
+      });
+      pagesF1.addEventListener("click", () => {
+        $(pagesF1).next().toggle();
+        $(pagesF1)
+          .find(".material-icons")
+          .text(arrow($(pagesF1).find(".material-icons").text()));
+      });
+      cssF2.addEventListener("click", () => {
+        $(cssF2).next().toggle();
+        $(cssF2)
+          .find(".material-icons")
+          .text(arrow($(cssF2).find(".material-icons").text()));
+      });
+      jsF2.addEventListener("click", () => {
+        $(jsF2).next().toggle();
+        $(jsF2)
+          .find(".material-icons")
+          .text(arrow($(jsF2).find(".material-icons").text()));
+      });
+
+      const vscode = document.querySelectorAll(".vscode");
     </script>
   </body>
 </html>
+<!-- keyboard_arrow_down -->
