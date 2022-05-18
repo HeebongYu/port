@@ -86,6 +86,19 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        position: relative;
+      }
+      .site__section01 .vscode .top .title,
+      .site__section03 .vscode .top .title,
+      .site__section05 .vscode .top .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--en_font);
+        color: var(--black);
+        font-weight: 600;
+        margin-top: 2px;
       }
       .site__section01 .vscode .top span,
       .site__section03 .vscode .top span,
@@ -127,6 +140,17 @@
       .site__section03 .vscode .bottom .right,
       .site__section05 .vscode .bottom .right {
         width: 75%;
+      }
+      .site__section01 .vscode .bottom .right code,
+      .site__section03 .vscode .bottom .right code,
+      .site__section05 .vscode .bottom .right code {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .site__section01 .vscode .bottom .right code::-webkit-scrollbar,
+      .site__section03 .vscode .bottom .right code::-webkit-scrollbar,
+      .site__section05 .vscode .bottom .right code::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
       }
 
       /* site__section02, site__section04 */
@@ -199,11 +223,17 @@
         height: 24px;
         margin-right: 5px;
       }
+      .site__wrap .left .assets.open {
+        background: url(../assets/icon/folder-resource-open.svg);
+      }
       .site__wrap .left .pages {
-        background: url(../assets/icon/folder-views-open.svg);
+        background: url(../assets/icon/folder-views.svg);
         width: 24px;
         height: 24px;
         margin-right: 5px;
+      }
+      .site__wrap .left .pages.open {
+        background: url(../assets/icon/folder-views-open.svg);
       }
       .site__wrap .left .cssFo {
         background: url(../assets/icon/folder-css.svg);
@@ -211,11 +241,17 @@
         height: 24px;
         margin-right: 5px;
       }
+      .site__wrap .left .cssFo.open {
+        background: url(../assets/icon/folder-css-open.svg);
+      }
       .site__wrap .left .jsFo {
         background: url(../assets/icon/folder-javascript.svg);
         width: 24px;
         height: 24px;
         margin-right: 5px;
+      }
+      .site__wrap .left .jsFo.open {
+        background: url(../assets/icon/folder-javascript-open.svg);
       }
       .site__wrap .left .html {
         background: url(../assets/icon/html.svg);
@@ -263,6 +299,46 @@
       .site__wrap .left .floor02,
       .site__wrap .left .floor03 {
         display: none;
+      }
+
+      /* site__load */
+      .site__load {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--white);
+        position: absolute;
+        top: 100vh;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .site__load .txt {
+        font-family: var(--kr_font);
+        font-size: 4vw;
+        font-weight: 200;
+        white-space: nowrap;
+        position: relative;
+        transition: all 0.3s;
+      }
+      .site__load .txt.hidden {
+        opacity: 0;
+      }
+      .site__load .txt::after {
+        content: "";
+        width: 0.1vw;
+        height: 4vw;
+        background: #000;
+        position: absolute;
+        right: -3px;
+        top: 1.1vw;
+        animation: blink 0.5s infinite;
+      }
+      @keyframes blink {
+        to {
+          opacity: 0;
+        }
       }
     </style>
   </head>
@@ -318,8 +394,6 @@
           data-8000="opacity: 0; display: block;"
           data-9000="opacity: 1; display: block;"
           data-13000="opacity: 1; display: block;"
-          data-14000="opacity: 0; display: block;"
-          data-14001="opacity: 0; display: none;"
         >
           MADE IN HEEBONG<br />
           REACT SITE
@@ -339,10 +413,15 @@
               <div class="material-icons">navigate_next</div>
             </button>
           </div>
-          <button class="cont__btn">CONTINUE</button>
+          <button class="site__btn">CONTINUE</button>
         </div>
       </div>
       <!-- //site__another -->
+
+      <div class="site__btn__sm">
+        <button class="site__btn">CONTINUE</button>
+      </div>
+      <!-- site__btn__sm -->
 
       <div class="site__wrap">
         <section
@@ -360,19 +439,20 @@
               <span></span>
               <span></span>
               <span></span>
+              <div class="title">PORTFOLIO SITE</div>
             </div>
             <div class="bottom">
               <div class="left">
                 <ul class="floor01">
                   <li class="folder">
-                    <span id="assetsF1" class="line">
+                    <span id="assets__folder__l1" class="line">
                       <span class="material-icons">keyboard_arrow_right</span>
                       <span class="assets"></span>
                       <span class="txt">assets</span>
                     </span>
                     <ul class="floor02">
                       <li class="folder">
-                        <span id="cssF2" class="line">
+                        <span id="css__folder__l1" class="line">
                           <span class="material-icons"
                             >keyboard_arrow_right</span
                           >
@@ -381,25 +461,25 @@
                         </span>
                         <ul class="floor03">
                           <li class="file">
-                            <span class="line">
+                            <span id="fonts__css__l1" class="line">
                               <span class="css"></span>
                               <span class="txt">fonts.css</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="reset__css__l1" class="line">
                               <span class="css"></span>
                               <span class="txt">reset.css</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="common__css__l1" class="line">
                               <span class="css"></span>
                               <span class="txt">common.css</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="style__css__l1" class="line">
                               <span class="css"></span>
                               <span class="txt">style.css</span>
                             </span>
@@ -407,7 +487,7 @@
                         </ul>
                       </li>
                       <li class="folder">
-                        <span id="jsF2" class="line">
+                        <span id="js__folder__l1" class="line">
                           <span class="material-icons"
                             >keyboard_arrow_right</span
                           >
@@ -416,43 +496,43 @@
                         </span>
                         <ul class="floor03">
                           <li class="file">
-                            <span class="line">
+                            <span id="loading__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">loading.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="menu__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">menu.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="open__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">open.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="intro__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">intro.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="cont__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">cont.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="site__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">site.js</span>
                             </span>
                           </li>
                           <li class="file">
-                            <span class="line">
+                            <span id="ending__js__l1" class="line">
                               <span class="js"></span>
                               <span class="txt">ending.js</span>
                             </span>
@@ -462,32 +542,32 @@
                     </ul>
                   </li>
                   <li class="folder">
-                    <span id="pagesF1" class="line">
+                    <span id="pages__folder__l1" class="line">
                       <span class="material-icons">keyboard_arrow_right</span>
                       <span class="pages"></span>
                       <span class="txt">pages</span>
                     </span>
                     <ul class="floor02">
                       <li class="file">
-                        <span class="line">
+                        <span id="intro__html__l1" class="line">
                           <span class="html"></span>
                           <span class="txt">intro.html</span>
                         </span>
                       </li>
                       <li class="file">
-                        <span class="line">
+                        <span id="cont__html__l1" class="line">
                           <span class="html"></span>
                           <span class="txt">cont.html</span>
                         </span>
                       </li>
                       <li class="file">
-                        <span class="line">
+                        <span id="site__html__l1" class="line">
                           <span class="html"></span>
                           <span class="txt">site.html</span>
                         </span>
                       </li>
                       <li class="file">
-                        <span class="line">
+                        <span id="ending__html__l1" class="line">
                           <span class="html"></span>
                           <span class="txt">ending.html</span>
                         </span>
@@ -495,7 +575,7 @@
                     </ul>
                   </li>
                   <li class="file">
-                    <span class="line">
+                    <span id="open__html__l1" class="line">
                       <span class="html"></span>
                       <span class="txt">open.html</span>
                     </span>
@@ -503,11 +583,377 @@
                 </ul>
               </div>
               <div class="right">
-                <pre><code class="language-javascript code">@charset "UTF-8";
+                <div id="fonts__css__r1">
+                  <pre><code class="language-css code">@charset "UTF-8";
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap");
 </code></pre>
+                </div>
+                <div id="reset__css__r1">
+                  <pre><code class="language-css code">@charset "UTF-8";
+
+/* border-box 초기화 */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 가로모드 글씨 확대 초기화 */
+html {
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 부드러운 이동 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 공백 초기화 */
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕",
+    helvetica, "Apple SD Gothic Neo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 링크 초기화 */
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 버튼 초기화 */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* 스타일 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+}
+em,
+address {
+  font-style: normal;
+}
+strong {
+  font-weight: normal;
+}
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+/* button */
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* table */
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* 간격 설정 */
+.mt0 {
+  margin-top: 0 !important;
+}
+
+/* 디자인 초기화 */
+input,
+textarea,
+button,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  font-size: 16px;
+}
+
+pre {
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+</code></pre>
+                </div>
+                <div id="common__css__r1">
+                  <pre><code class="language-css code">@charset "UTF-8";
+/* 변수설정 */
+:root {
+  /* 색상 */
+  --white: #ffffff;
+  --whiteB: #dddddd;
+  --black: #222222;
+  --blackW: #494949;
+  --green: #c1d72e;
+  --greenW: #d4dd9c;
+  --red: #f96f55;
+  --redW: #e1ada1;
+  --blue: #89e2da;
+
+  /* 폰트 */
+  --en_font: "Josefin Sans";
+  --kr_font: "Hahmlet";
+}
+
+/* body */
+body {
+  opacity: 0;
+  transition: all 1s;
+}
+body.show {
+  opacity: 1;
+}
+
+/* header */
+.header {
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .menu {
+  margin-right: 50px;
+  font-size: 40px;
+}
+.header .dots {
+  display: flex;
+  margin-right: 10px;
+}
+.header .dots .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e1ada1;
+  margin-right: 10px;
+}
+.header .dots .dot.active {
+  background: #9c1f00;
+}
+
+/* nav */
+.nav {
+  position: fixed;
+  right: -28%;
+  width: 28%;
+  height: 100vh;
+  background: #fff;
+  z-index: 3000;
+}
+.nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.nav ul li a {
+  font-size: 5vw;
+  margin-left: 3vw;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* stop-scrolling */
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* fixed */
+.fixed {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/*임시*/
+.intro__page .bottom {
+  width: 100%;
+  height: 20vw;
+  background: #6db722;
+  margin-top: 2vw;
+}                    
+</code></pre>
+                </div>
+                <div id="style__css__r1">
+                  <pre><code class="language-css code">style.css
+</code></pre>
+                </div>
+                <div id="loading__js__r1">
+                  <pre><code class="language-javascript code">(function () {
+  setTimeout(() => {
+    document.body.classList.add("show");
+    scrollTo(0, 0);
+  }, 100);
+})();
+</code></pre>
+                </div>
+                <div id="menu__js__r1">
+                  <pre><code class="language-javascript code">const menu = document.querySelector(".header .menu");
+const nav = document.querySelector(".nav");
+
+menu.addEventListener("mouseenter", () => {
+  gsap.to(nav, {
+    duration: 1.5,
+    right: 0,
+    ease: "expo.inOut",
+  });
+});
+nav.addEventListener("mouseleave", () => {
+  gsap.to(nav, {
+    duration: 1.5,
+    right: -28 + "%",
+    ease: "expo.inOut",
+  });
+});
+</code></pre>
+                </div>
+                <div id="open__js__r1">
+                  <pre><code class="language-javascript code">open.js
+</code></pre>
+                </div>
+                <div id="intro__js__r1">
+                  <pre><code class="language-javascript code">intro.js
+</code></pre>
+                </div>
+                <div id="cont__js__r1">
+                  <pre><code class="language-javascript code">cont.js
+</code></pre>
+                </div>
+                <div id="site__js__r1">
+                  <pre><code class="language-javascript code">site.js
+</code></pre>
+                </div>
+                <div id="ending__js__r1">
+                  <pre><code class="language-javascript code">ending.js
+</code></pre>
+                </div>
+                <div id="open__html__r1">
+                  <pre><code class="language-html code">&lt;body&gt;
+  &lt;div class="open__page"&gt;
+    &lt;nav class="nav"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a&gt; href="../open.html"&gt;open&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./intro.html"&gt;intro&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./cont.html"&gt;cont&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./site.html"&gt;site&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./ending.html"&gt;ending&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- //nav --&gt;
+
+    &lt;header class="header"&gt;
+      &lt;button&gt; class="material-icons menu"&gt;menu&lt;/button&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+
+    &lt;div class="open__wrap"&gt;
+      &lt;h1&gt; class="open__title"&gt;HI, PLEASE ENJOY MY PORTFOLIO.&lt;/h1&gt;
+      &lt;p&gt; class="open__desc"&gt;
+        사이트는 간결하고 재미있게 구성되도록 노력했습니다. 즐겁게 감상하세요.
+      &lt;/p&gt;
+      &lt;button&gt; class="open__btn"&gt;ENJOY&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- //open__wrap --&gt;
+
+    &lt;div class="open__load"&gt;
+      &lt;p&gt; class="txt"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- //open__load --&gt;
+  &lt;/div&gt;
+  &lt;!-- //open__page --&gt;
+&lt;/body&gt;
+</code></pre>
+                </div>
+                <div id="cont__html__r1">
+                  <pre><code class="language-html code">cont.html
+</code></pre>
+                </div>
+                <div id="site__html__r1">
+                  <pre><code class="language-html code">site.html
+</code></pre>
+                </div>
+                <div id="intro__html__r1">
+                  <pre><code class="language-html code">intro.html
+</code></pre>
+                </div>
+                <div id="ending__html__r1">
+                  <pre><code class="language-html code">ending.html
+</code></pre>
+                </div>
               </div>
             </div>
           </div>
@@ -565,6 +1011,7 @@
               <span></span>
               <span></span>
               <span></span>
+              <div class="title">PHP SITE</div>
             </div>
             <div class="bottom">
               <div class="left"></div>
@@ -611,20 +1058,18 @@
           class="site__section05 fixed"
           data-0="display: none;"
           data-11000="display: block;"
-          data-14000="display: block;"
-          data-14001="display: none;"
         >
           <div
             class="vscode fixed"
             data-11000="width: 100%; height: 0%;"
             data-12000="width: 100%; height: 100%;"
             data-13000="width: 100%; height: 100%;"
-            data-14000="width: 100%; height: 0%;"
           >
             <div class="top">
               <span></span>
               <span></span>
               <span></span>
+              <div class="title">REACT SITE</div>
             </div>
             <div class="bottom">
               <div class="left"></div>
@@ -635,6 +1080,11 @@
         <!-- //site__section05 -->
       </div>
       <!-- //site__wrap -->
+
+      <div class="site__load">
+        <p class="txt"></p>
+      </div>
+      <!-- //site__load -->
     </div>
     <!-- //site__page -->
 
@@ -642,64 +1092,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="../assets/js/jquery-latest.min.js"></script>
     <script src="../assets/js/skrollr.min.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/menu.js"></script>
-    <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-    <script src="../assets/js/jquery-latest.min.js"></script>
-    <script>
-      var s = skrollr.init();
-      hljs.highlightAll();
-
-      function scroll() {
-        let scrollTop = document.documentElement.scrollTop;
-        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-        requestAnimationFrame(scroll);
-      }
-      scroll();
-
-      const assetsF1 = document.querySelector("#assetsF1");
-      const pagesF1 = document.querySelector("#pagesF1");
-      const cssF2 = document.querySelector("#cssF2");
-      const jsF2 = document.querySelector("#jsF2");
-
-      function arrow(el) {
-        let answer = "";
-        if (el === "keyboard_arrow_right") {
-          answer = "keyboard_arrow_down";
-        } else {
-          answer = "keyboard_arrow_right";
-        }
-        return answer;
-      }
-
-      assetsF1.addEventListener("click", () => {
-        $(assetsF1).next().toggle();
-        $(assetsF1)
-          .find(".material-icons")
-          .text(arrow($(assetsF1).find(".material-icons").text()));
-      });
-      pagesF1.addEventListener("click", () => {
-        $(pagesF1).next().toggle();
-        $(pagesF1)
-          .find(".material-icons")
-          .text(arrow($(pagesF1).find(".material-icons").text()));
-      });
-      cssF2.addEventListener("click", () => {
-        $(cssF2).next().toggle();
-        $(cssF2)
-          .find(".material-icons")
-          .text(arrow($(cssF2).find(".material-icons").text()));
-      });
-      jsF2.addEventListener("click", () => {
-        $(jsF2).next().toggle();
-        $(jsF2)
-          .find(".material-icons")
-          .text(arrow($(jsF2).find(".material-icons").text()));
-      });
-
-      const vscode = document.querySelectorAll(".vscode");
-    </script>
+    <script src="../assets/js/site.js"></script>
+    <script src="../assets/js/portfolioVscode.js"></script>
+    <script></script>
   </body>
 </html>
-<!-- keyboard_arrow_down -->
