@@ -1,12 +1,30 @@
 var s = skrollr.init();
 hljs.highlightAll();
 
+function siteNumCh(el) {
+  let siteNum;
+  if (0 <= el && el < 3000) {
+    siteNum = 1;
+  } else if (3000 <= el && el < 9000) {
+    siteNum = 2;
+  } else if (9000 <= el) {
+    siteNum = 3;
+  }
+  console.log(siteNum);
+}
+
+// scrollTop
 function scroll() {
   let scrollTop = document.documentElement.scrollTop;
   document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+  siteNumCh(scrollTop);
   requestAnimationFrame(scroll);
+  // requestAnimationFrame(siteNumCh());
+  // console.log(scrollTop);
 }
 scroll();
+
+// vscode 작업용 함수
 function arrow(el) {
   let answer = "";
   if (el === "keyboard_arrow_right") {
@@ -23,10 +41,10 @@ function vscodeNone() {
 }
 vscodeNone();
 
+// 로딩
 const siteBtn = document.querySelectorAll(".site__btn");
 const siteLoad = document.querySelector(".site__load");
 const siteLoadTxt = document.querySelector(".site__load .txt");
-
 siteBtn.forEach((el) => {
   el.addEventListener("click", () => {
     // 가상로딩 시작
