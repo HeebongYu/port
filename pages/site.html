@@ -884,7 +884,35 @@ nav.addEventListener("mouseleave", () => {
 </code></pre>
                 </div>
                 <div id="open__js__r1">
-                  <pre><code class="language-javascript code">open.js
+                  <pre><code class="language-javascript code">const openBtn = document.querySelector(".open__btn");
+const openLoad = document.querySelector(".open__load");
+const openLoadTxt = document.querySelector(".open__load .txt");
+
+openBtn.addEventListener("click", () => {
+  // 가상로딩 시작
+  gsap.to(openLoad, {
+    duration: 1.5,
+    top: 0,
+    ease: "expo.inOut",
+  });
+
+  // 로딩 타이핑
+  gsap.to(openLoadTxt, {
+    duration: 5,
+    text: "즐기실 준비 됐나요? 먼저 저에 대하여 알고 가요.",
+    delay: 1.5,
+  });
+
+  // 로딩 타이핑 제거
+  setTimeout(() => {
+    openLoadTxt.classList.add("hidden");
+  }, 7000);
+
+  // intro 페이지로 이동
+  setTimeout(() => {
+    location.href = "./pages/intro.html";
+  }, 7500);
+});
 </code></pre>
                 </div>
                 <div id="intro__js__r1">
@@ -940,16 +968,165 @@ nav.addEventListener("mouseleave", () => {
 &lt;/body&gt;
 </code></pre>
                 </div>
+                <div id="intro__html__r1">
+                  <pre><code class="language-html code">&lt;body&gt;
+  &lt;div class="intro__page"&gt;
+    &lt;nav class="nav"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a&gt; href="../open.html"&gt;open&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./intro.html"&gt;intro&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./cont.html"&gt;cont&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./site.html"&gt;site&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a&gt; href="./ending.html"&gt;ending&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- //nav --&gt;
+
+    &lt;header class="header"&gt;
+      &lt;button&gt; class="material-icons menu"&gt;menu&lt;/button&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+
+    &lt;div class="intro__wrap"&gt;
+      &lt;main class="intro__cont"&gt;
+        &lt;section class="intro__section1"&gt;
+          &lt;div class="top"&gt;
+            &lt;div&gt; class="left"&gt;
+              &lt;img
+                src="../assets/img/photo01.png"
+                alt="사진01"
+                class="photo"
+              /&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+              &lt;img src="../assets/img/img01.png" alt="이미지01" class="img" /&gt;
+              &lt;p&gt; class="txt"&gt;프론트엔드 꿈나무 유희봉&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt; class="bottom"&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //intro__section1 --&gt;
+
+        &lt;section class="intro__section2"&gt;
+          &lt;div class="top"&gt;
+            &lt;div class="left"&gt;
+              &lt;div&gt; class="title"&gt;나에게로 떠나는 여행&lt;/div&gt;
+              &lt;div&gt; class="txt"&gt;
+                저 푸른 바다 끝까지 말을 달리면&lt;br /&gt;
+                소금 같은 별이 떠 있고&lt;br /&gt;
+                사막엔 낙타만이 가는 길&lt;br /&gt;
+                무수한 사랑 길이 되어 열어줄거야
+              &lt;/div&gt;
+              &lt;img src="../assets/img/img02.png" alt="이미지02" class="img" /&gt;
+            &lt;/div&gt;
+            &lt;div&gt; class="right"&gt;
+              &lt;img
+                src="../assets/img/photo02.png"
+                alt="사진02"
+                class="photo"
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt; class="bottom"&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //intro__section2 --&gt;
+
+        &lt;section class="intro__section3"&gt;
+          &lt;div class="top"&gt;
+            &lt;div&gt; class="left"&gt;
+              &lt;img
+                src="../assets/img/photo03.png"
+                alt="사진03"
+                class="photo"
+              /&gt;
+            &lt;/div&gt;
+            &lt;div class="right"&gt;
+              &lt;div&gt; class="title"&gt;랄랄라&lt;/div&gt;
+              &lt;div&gt; class="txt"&gt;
+                난 오늘은 즐길래 내일은 몰라&lt;br /&gt;
+                하고 싶은 것 마음대로 골라&lt;br /&gt;
+                자! 놀자 또 놀자&lt;br /&gt;
+                지나간 얘기들은 이제 그만
+              &lt;/div&gt;
+              &lt;img src="../assets/img/img02.png" alt="이미지02" class="img" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt; class="bottom"&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //intro__section3 --&gt;
+
+        &lt;section class="intro__section4"&gt;
+          &lt;div class="top"&gt;
+            &lt;div class="left"&gt;
+              &lt;div&gt; class="txt"&gt;I CAN DO&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div&gt; class="right"&gt;
+              &lt;img src="../assets/img/img03.png" alt="이미지03" class="img" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt; class="bottom"&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //intro__section4 --&gt;
+
+        &lt;div class="intro__btn"&gt;
+          &lt;button&gt; class="open__btn"&gt;ENJOY&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;!-- //intro__btn --&gt;
+      &lt;/main&gt;
+      &lt;!-- //intro__cont --&gt;
+
+      &lt;div class="intro__deco"&gt;
+        &lt;div&gt; class="intro__side side1"&gt;
+          &lt;span
+            &gt;It is kind of fun to do the &lt;br /&gt;
+            impossible. — Walt Disney&lt;/span
+          &gt;
+        &lt;/div&gt;
+        &lt;!-- //intro__side01 --&gt;
+
+        &lt;div&gt; class="intro__side side2"&gt;
+          &lt;span
+            &gt;It is kind of fun to do the &lt;br /&gt;
+            impossible. — Walt Disney&lt;/span
+          &gt;
+        &lt;/div&gt;
+        &lt;!-- //intro__side02 --&gt;
+
+        &lt;div&gt; class="intro__side side3"&gt;
+          &lt;span
+            &gt;It is kind of fun to do the &lt;br /&gt;
+            impossible. — Walt Disney&lt;/span
+          &gt;
+        &lt;/div&gt;
+        &lt;!-- //intro__side03 --&gt;
+
+        &lt;div&gt; class="intro__side side4"&gt;
+          &lt;span
+            &gt;It is kind of fun to do the &lt;br /&gt;
+            impossible. — Walt Disney&lt;/span
+          &gt;
+        &lt;/div&gt;
+        &lt;!-- //intro__side04 --&gt;
+      &lt;/div&gt;
+      &lt;!-- //intro__deco --&gt;
+
+      &lt;div class="intro__load"&gt;
+        &lt;p&gt; class="txt"&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!-- //intro__load --&gt;
+    &lt;/div&gt;
+    &lt;!-- //intro__wrap --&gt;
+  &lt;/div&gt;
+  &lt;!-- //intro__page --&gt;
+&lt;/body&gt;
+</code></pre>
+                </div>
                 <div id="cont__html__r1">
                   <pre><code class="language-html code">cont.html
 </code></pre>
                 </div>
                 <div id="site__html__r1">
                   <pre><code class="language-html code">site.html
-</code></pre>
-                </div>
-                <div id="intro__html__r1">
-                  <pre><code class="language-html code">intro.html
 </code></pre>
                 </div>
                 <div id="ending__html__r1">
