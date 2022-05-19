@@ -1,6 +1,46 @@
 var s = skrollr.init();
 hljs.highlightAll();
 
+const prevBtn = document.querySelector(".another .prev");
+const nextBtn = document.querySelector(".another .next");
+let switchOn = false;
+
+// siteCh
+function siteCh(siteNum) {
+  if (switchOn) {
+    switch (siteNum) {
+      case 1:
+        scrollTo(0, 0);
+        switchOn = false;
+        break;
+      case 2:
+        scrollTo(0, 6000);
+        switchOn = false;
+        break;
+      case 3:
+        scrollTo(0, 12000);
+        switchOn = false;
+        break;
+    }
+  }
+}
+
+// siteGo
+function siteGo(siteNum) {
+  prevBtn.addEventListener("click", () => {
+    switchOn = true;
+    siteNum == 1 ? (siteNum = 3) : (siteNum -= 1);
+    siteCh(siteNum);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    switchOn = true;
+    siteNum == 3 ? (siteNum = 1) : (siteNum += 1);
+    siteCh(siteNum);
+  });
+}
+
+// siteNumCh
 function siteNumCh(el) {
   let siteNum;
   if (0 <= el && el < 3000) {
@@ -10,10 +50,12 @@ function siteNumCh(el) {
   } else if (9000 <= el) {
     siteNum = 3;
   }
-  console.log(siteNum);
+  siteGo(siteNum);
+  // prevSite(siteNum);
+  // nextSite(siteNum);
 }
 
-// scrollTop
+// scrollTop(!!기준)
 function scroll() {
   let scrollTop = document.documentElement.scrollTop;
   document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
