@@ -47,6 +47,7 @@ const siteLoad = document.querySelector(".site__load");
 const siteLoadTxt = document.querySelector(".site__load .txt");
 siteBtn.forEach((el) => {
   el.addEventListener("click", () => {
+    document.querySelector(".scrollTop").style.display = "none";
     // 가상로딩 시작
     gsap.to(siteLoad, {
       duration: 1.5,

@@ -31,10 +31,51 @@
       body {
         background: var(--white);
       }
+      .ending__time {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        width: 60%;
+        height: 30px;
+        border: 1px solid var(--black);
+        margin-top: 15px;
+      }
+      .ending__time .ending__time__gauge {
+        width: 30%;
+        height: inherit;
+        background: var(--black);
+      }
+
+      .ending__wrap {
+        width: 100%;
+        height: 100vh;
+        padding-top: 60px;
+      }
+
+      .ending__cont {
+      }
+      .ending__cont .top {
+        max-width: 1200px;
+        width: 98%;
+        margin: 0 auto;
+        padding-top: 5vh;
+      }
+      .ending__cont .top .title {
+        font-family: var(--ko_font);
+        color: var(--black);
+        font-size: 10vh;
+        font-weight: 100;
+      }
+      .ending__cont .top .desc {
+        font-family: var(--en_font);
+        color: var(--black);
+        font-size: 10vh;
+        font-weight: 100;
+      }
     </style>
   </head>
   <body>
-    <div class="site__page">
+    <div class="ending__page">
       <nav class="nav">
         <ul>
           <li><a href="../open.html">open</a></li>
@@ -50,7 +91,24 @@
         <button class="material-icons menu">menu</button>
       </header>
       <!-- //header -->
-      <div>ending.html</div>
+
+      <div class="ending__time">
+        <div class="ending__time__gauge"></div>
+      </div>
+      <!-- //ending__time -->
+
+      <div class="ending__wrap">
+        <div class="ending__cont">
+          <div class="top">
+            <div class="title">참고한 사이트</div>
+            <div class="desc">https://madg.com/make/</div>
+          </div>
+          <div class="bottom">
+            <div class="cont"></div>
+          </div>
+        </div>
+      </div>
+      <!-- //ending__wrap -->
     </div>
     <!-- //site__page -->
 
