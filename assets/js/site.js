@@ -19,8 +19,6 @@ function scroll() {
   document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
   siteNumCh(scrollTop);
   requestAnimationFrame(scroll);
-  // requestAnimationFrame(siteNumCh());
-  // console.log(scrollTop);
 }
 scroll();
 
