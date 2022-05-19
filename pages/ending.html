@@ -28,6 +28,40 @@
     />
 
     <style>
+      .setting {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 20px;
+        top: 15px;
+        z-index: 10000;
+      }
+      .setting .timer {
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        min-width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+      }
+      .setting .material-icons {
+        margin-left: 2px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+        min-width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .setting .material-icons:active {
+        background: rgba(0, 0, 0);
+      }
+      @media (max-width: 800px) {
+        .setting .material-icons {
+          display: none;
+        }
+      }
+
       body {
         background: var(--white);
       }
@@ -72,9 +106,21 @@
         font-size: 10vh;
         font-weight: 100;
       }
+
+      .ending__section01 {
+        display: none;
+      }
     </style>
   </head>
   <body>
+    <div class="setting">
+      <div class="timer">0</div>
+      <button class="material-icons play">pause</button>
+      <!-- <button class="material-icons pause">play_circle</button> -->
+      <button class="material-icons replay">replay</button>
+    </div>
+    <!-- //setting -->
+
     <div class="ending__page">
       <nav class="nav">
         <ul>
@@ -99,13 +145,15 @@
 
       <div class="ending__wrap">
         <div class="ending__cont">
-          <div class="top">
-            <div class="title">참고한 사이트</div>
-            <div class="desc">https://madg.com/make/</div>
-          </div>
-          <div class="bottom">
-            <div class="cont"></div>
-          </div>
+          <section class="ending__section01">
+            <div class="top">
+              <div class="title">참고한 사이트</div>
+              <div class="desc">https://madg.com/make</div>
+            </div>
+            <div class="bottom">
+              <div class="cont"></div>
+            </div>
+          </section>
         </div>
       </div>
       <!-- //ending__wrap -->
@@ -117,5 +165,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
     <script src="../assets/js/loading.js"></script>
     <script src="../assets/js/menu.js"></script>
+    <script>
+      const timer = document.querySelector(".setting .timer");
+      const play = document.querySelector(".setting .play");
+      const replay = document.querySelector(".setting .replay");
+      let nowPlay = true;
+      let nowTime = 0;
+
+      // 재생/정지 버튼
+      play.addEventListener("click", () => {
+        nowPlay ? pauseEnding() : playEnding();
+      });
+
+      // 다시시작 버튼
+      replay.addEventListener("click", () => {
+        nowTime = 0;
+        playEnding();
+      });
+
+      // 플레이 정지
+      function pauseEnding() {
+        play.innerText = "play_circle";
+        play.setAttribute("title", "정지");
+        nowPlay = false;
+      }
+
+      // 플레이 재생
+      function playEnding() {
+        play.innerText = "pause";
+        play.setAttribute("title", "재생");
+        nowPlay = true;
+      }
+
+      // 자동 플레이
+      setInterval(function timeGo() {
+        if (nowPlay) {
+          nowTime += 100;
+          timer.innerText = nowTime / 1000;
+          console.log(nowTime / 1000);
+        }
+      }, 100);
+    </script>
   </body>
 </html>
