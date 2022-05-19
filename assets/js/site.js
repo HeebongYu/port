@@ -1,11 +1,8 @@
 var s = skrollr.init();
 hljs.highlightAll();
 
-const prevBtn = document.querySelector(".another .prev");
-const nextBtn = document.querySelector(".another .next");
+// 이전/다음 버튼
 let switchOn = false;
-
-// siteCh
 function siteCh(siteNum) {
   if (switchOn) {
     switch (siteNum) {
@@ -24,23 +21,22 @@ function siteCh(siteNum) {
     }
   }
 }
-
-// siteGo
 function siteGo(siteNum) {
+  const prevBtn = document.querySelector(".another .prev");
+  const nextBtn = document.querySelector(".another .next");
+  // 이전 버튼
   prevBtn.addEventListener("click", () => {
     switchOn = true;
     siteNum == 1 ? (siteNum = 3) : (siteNum -= 1);
     siteCh(siteNum);
   });
-
+  // 다음 버튼
   nextBtn.addEventListener("click", () => {
     switchOn = true;
     siteNum == 3 ? (siteNum = 1) : (siteNum += 1);
     siteCh(siteNum);
   });
 }
-
-// siteNumCh
 function siteNumCh(el) {
   let siteNum;
   if (0 <= el && el < 3000) {
@@ -51,8 +47,6 @@ function siteNumCh(el) {
     siteNum = 3;
   }
   siteGo(siteNum);
-  // prevSite(siteNum);
-  // nextSite(siteNum);
 }
 
 // scrollTop(!!기준)
