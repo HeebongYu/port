@@ -1159,11 +1159,15 @@
       // nowPlay(!!기준)
       setInterval(function timeGo() {
         if (nowPlay) {
+          console.log(nowTime);
           if (nowTime < maxTime) {
+            console.log(nowTime);
             nowTime += 100;
             timer.innerText = nowTime / 1000;
             playGauge(nowTime);
             playPage(nowTime);
+          } else {
+            nowPlay = false;
           }
         }
       }, 100);
