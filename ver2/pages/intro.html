@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
+    <style>
+      body {
+        background-color: var(--green);
+      }
+      /* intro__wrap */
+      .intro__wrap {
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--green);
+        opacity: 0;
+      }
+      .intro__wrap.show {
+        opacity: 1;
+        transition: all 1s;
+      }
+
+      /* intro__page */
+      .intro__page {
+        width: 100%;
+        height: 6000px; /*임시*/
+      }
+
+      .intro__page .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="intro__wrap">
+      <section class="intro__page">
+        <header class="header"></header>
+      </section>
+      <!-- //intro__page -->
+
+      <section class="intro__loading"></section>
+      <!-- //intro__loading -->
+    </main>
+    <!-- //intro__wrap -->
+
+    <!-- script -->
+    <script src="../assets/js/version.js"></script>
+    <script>
+      const introWrap = document.querySelector(".intro__wrap");
+
+      (function () {
+        setTimeout(() => {
+          introWrap.classList.add("show");
+          scrollTo(0, 0);
+        }, 100);
+      })();
+    </script>
+  </body>
+</html>
