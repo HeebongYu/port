@@ -4,60 +4,208 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PORTFOLIO ver.2</title>
     <link rel="stylesheet" href="../assets/css/fonts.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/common.css" />
-
-    <!-- 아이콘 -->
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
     <style>
       body {
         background-color: var(--green);
       }
+
+      /* 공통 */
+      .txt,
+      .decoT,
+      .decoP,
+      .decoI {
+        user-select: none;
+        pointer-events: none;
+      }
+
       /* intro__wrap */
       .intro__wrap {
         width: 100%;
         overflow: hidden;
         background-color: var(--green);
-        opacity: 0;
-      }
-      .intro__wrap.show {
-        opacity: 1;
-        transition: all 1s;
       }
 
       /* intro__page */
       .intro__page {
         width: 100%;
-        height: 6000px; /*임시*/
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .intro__page .txt {
+        color: var(--black);
+        font-family: var(--kr_font);
+        font-size: 3vw;
+        font-weight: 100;
+        white-space: nowrap;
+        text-align: center;
+      }
+      @media (max-width: 700px) {
+        .intro__page .txt {
+          font-size: 20px;
+        }
+      }
+
+      /* intro__section01 */
+      .intro__section01 {
+        width: 100%;
+        height: 800px;
+        position: relative;
+      }
+      .intro__section01 .decoT {
+        writing-mode: vertical-rl;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .intro__section01 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 700;
+        font-size: calc(14px + 6vw);
+        line-height: calc(14px + 8vw);
+        color: var(--white);
+        white-space: nowrap;
+        text-transform: uppercase;
+        word-spacing: -0.3ch;
+      }
+      .intro__section01 .decoP {
+        width: 60vw;
+        max-width: 60vh;
+        height: 60vw;
+        max-height: 60vh;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 10vw;
+        transform: translateY(-50%);
+        overflow: hidden;
+        /* 임시 */
+        background: #fff;
+      }
+      @media (max-width: 700px) {
+        .intro__section01 {
+          height: 600px;
+        }
+      }
+
+      /* intro__section02 */
+      .intro__section02 {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .intro__section02 .decoT {
+        margin-top: 400px;
+      }
+      .intro__section02 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 700;
+        font-size: calc(14px + 6vw);
+        line-height: calc(14px + 8vw);
+        color: var(--white);
+        white-space: nowrap;
+        text-transform: uppercase;
+        word-spacing: -0.3ch;
+      }
+      .intro__section02 .decoI img {
+        height: 40vw;
+        width: 44vw;
+      }
+      .intro__section02 .txt {
+        color: var(--black);
+        font-family: var(--kr_font);
+        font-size: calc(14px + 1vw);
+        font-weight: 900;
+        white-space: nowrap;
+        text-align: center;
+        position: absolute;
+        top: calc(120px + 10%);
+        left: 40%;
+        transform: translate(-50%, -50%);
+        opacity: 0.6;
+      }
+      @media (max-width: 700px) {
+        .intro__section02 {
+          height: 600px;
+        }
+        .intro__section02 .decoT {
+          margin-top: 300px;
+        }
+      }
+
+      /* intro__section03 */
+      .intro__section03 {
+        width: 100%;
+        height: 1000px;
       }
     </style>
   </head>
   <body>
     <main class="intro__wrap">
-      <section class="intro__page"></section>
+      <section class="intro__page">
+        <p class="animate__animated animate__zoomIn txt">
+          포트폴리오는 <strong>간결</strong>하고 <strong>재미</strong>있게
+          구성되도록 노력했습니다.
+          <br />
+          즐겁게 보기를 기원합니다.
+        </p>
+      </section>
       <!-- //intro__page -->
+      <section class="intro__section01">
+        <div class="decoT">
+          <span
+            >Hello, My <br />
+            Portfolio</span
+          >
+        </div>
+        <div class="container">
+          <div class="decoP">
+            <img src="../assets/img/photo01.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- //intro__section01 -->
+      <section class="intro__section02">
+        <div class="decoT">
+          <span
+            >Let's start <br />
+            Portfolio</span
+          >
+        </div>
+        <div class="decoI">
+          <img src="../assets/img/img01.png" alt="" />
+        </div>
+        <div class="txt">
+          안녕하세요!!<br />
+          먼저 저에 대하여 간단하게<br />
+          소개하겠습니다.<br />
+        </div>
+      </section>
+      <!-- //intro__section02 -->
 
-      <section class="intro__loading"></section>
-      <!-- //intro__loading -->
+      <section class="intro__section03">
+        <div class="container"></div>
+      </section>
+      <!-- //intro__section03 -->
     </main>
     <!-- //intro__wrap -->
 
     <!-- script -->
     <script src="../assets/js/version.js"></script>
     <script>
-      const introWrap = document.querySelector(".intro__wrap");
-
-      (function () {
-        setTimeout(() => {
-          introWrap.classList.add("show");
-          scrollTo(0, 0);
-        }, 100);
-      })();
+      const introPage = document.querySelector(".intro__page");
     </script>
   </body>
 </html>
