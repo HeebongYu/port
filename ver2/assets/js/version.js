@@ -2,7 +2,7 @@ document.body.onload = addElement;
 
 function addElement() {
   let newDiv = document.createElement("div");
-  let newContent = document.createTextNode("ver.2.0521.01");
+  let newContent = document.createTextNode("ver.2.0521.02");
   newDiv.appendChild(newContent);
   newDiv.classList.add("version");
 
