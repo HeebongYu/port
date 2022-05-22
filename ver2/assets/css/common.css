@@ -38,6 +38,13 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.border {
+  border: 1px solid #000;
+}
+.mb10vh {
+  margin-bottom: 10vh;
+}
 /* body */
 /* body {
   opacity: 0;
