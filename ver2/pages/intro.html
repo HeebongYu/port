@@ -257,6 +257,7 @@
       /* intro__section04 */
       .intro__section04 {
         width: 100%;
+        position: relative;
       }
       .intro__section04 .top {
         height: 60vw;
@@ -287,6 +288,22 @@
 
         white-space: nowrap;
         text-transform: uppercase;
+      }
+      .intro__section04 .txt {
+        font-family: var(--kr_font);
+        font-weight: 900;
+        color: var(--black);
+        opacity: 0.6;
+
+        font-size: calc(14px + 1vw);
+
+        white-space: nowrap;
+        text-align: center;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-50%);
       }
     </style>
   </head>
@@ -367,8 +384,13 @@
           <div class="bottom">
             <button>CONTINUE</button>
           </div>
+          <div class="txt">
+            제가 학습한 <br />
+            내용입니다.<br />
+          </div>
         </section>
       </div>
+      <!-- //intro__section04 -->
     </main>
     <!-- //intro__wrap -->
 
@@ -387,20 +409,22 @@
         const introSection01 = document.querySelector(".intro__section01");
         const introSection02 = document.querySelector(".intro__section02");
         const introSection03 = document.querySelector(".intro__section03");
-
+        const introSection04 = document.querySelector(".intro__section04");
         let target1 = introSection01.querySelector(".decoT");
         let target2 = introSection02.querySelector(".txt");
         let target3 = introSection03.querySelector(".txt");
+        let target4 = introSection04.querySelector(".txt");
 
         let scrollTop = document.documentElement.scrollTop;
-
         let offset1 = (scrollTop - introSection01.offsetTop) * 0.1;
         let offset2 = (scrollTop - introSection02.offsetTop) * 0.15;
-        let offset3 = (scrollTop - introSection02.offsetTop) * 0.05;
+        let offset3 = (scrollTop - introSection03.offsetTop) * 0.15;
+        let offset4 = (scrollTop - introSection04.offsetTop) * 0.15;
 
         gsap.to(target1, { duration: 0.3, y: offset1 });
         gsap.to(target2, { duration: 0.3, y: offset2 });
         gsap.to(target3, { duration: 0.3, y: offset3 });
+        gsap.to(target4, { duration: 0.3, y: offset3 });
 
         requestAnimationFrame(scroll);
       }
