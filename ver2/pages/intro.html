@@ -467,6 +467,11 @@
         gsap.to(target5, { duration: 0.3, y: offset5 });
 
         requestAnimationFrame(scroll);
+
+        const wih = window.innerHeight;
+        if (scrollTop > wih) {
+          document.querySelector(".intro__page").style.display = "none";
+        }
       }
       scroll();
 
