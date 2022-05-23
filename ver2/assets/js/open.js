@@ -5,14 +5,16 @@ const openTitle = openPage.querySelector(".open__title");
 const openButton = openPage.querySelector(".open__button");
 const openButtonTxt = openPage.querySelector(".open__button span");
 
-window.onload = function () {
-  let reloading = false;
+(function () {
+  window.onload = function () {
+    let reloading = false;
 
-  do {
-    gsap.restart();
-    console.log("dd");
-  } while (reloading);
-};
+    do {
+      gsap.restart();
+      console.log("dd");
+    } while (reloading);
+  };
+})();
 // (function () {
 //   // if (reloading) {
 //   //   //window.location.reload();
