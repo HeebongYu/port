@@ -6,10 +6,7 @@ const openButton = openPage.querySelector(".open__button");
 const openButtonTxt = openPage.querySelector(".open__button span");
 
 (function () {
-  // if (!location.hash) {
-  //   location.hash = "#reload";
-  //   location.href = location.href;
-  // }
+  window.location = window.location - "#loaded";
 })();
 
 window.onload = function () {
