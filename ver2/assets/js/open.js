@@ -5,18 +5,29 @@ const openTitle = openPage.querySelector(".open__title");
 const openButton = openPage.querySelector(".open__button");
 const openButtonTxt = openPage.querySelector(".open__button span");
 
-(function () {
-  if (window.location.hash) {
-    window.location = window.location - "#loaded";
-  }
-})();
-
 window.onload = function () {
-  if (!window.location.hash) {
-    window.location = window.location + "#loaded";
-    window.location.reload();
-  }
+  let reloading = false;
+
+  do {
+    gsap.restart();
+    console.log("dd");
+  } while (reloading);
 };
+// (function () {
+//   // if (reloading) {
+//   //   //window.location.reload();
+//   // }
+//   // reloading.forEach((el) => {
+//   //   if (el) {
+//   //     window.location.reload();
+//   //     return;
+//   //   }
+//   // });
+//   // do {
+//   //   gsap.restart();
+//   //   console.log("dd");
+//   // } while (reloading);
+// })();
 
 openButton.addEventListener("click", () => {
   loading();
