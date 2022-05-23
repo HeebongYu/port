@@ -50,3 +50,5 @@ function loading() {
     location.href = "./pages/intro.html";
   }, 3000);
 }
+
+gsap.restart();
