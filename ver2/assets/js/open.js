@@ -6,11 +6,18 @@ const openButton = openPage.querySelector(".open__button");
 const openButtonTxt = openPage.querySelector(".open__button span");
 
 (function () {
-  if (!location.hash) {
-    location.hash = "#reload";
-    location.href = location.href;
-  }
+  // if (!location.hash) {
+  //   location.hash = "#reload";
+  //   location.href = location.href;
+  // }
 })();
+
+window.onload = function () {
+  if (!window.location.hash) {
+    window.location = window.location + "#loaded";
+    window.location.reload();
+  }
+};
 
 openButton.addEventListener("click", () => {
   loading();
