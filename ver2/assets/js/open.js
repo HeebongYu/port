@@ -5,32 +5,11 @@ const openTitle = openPage.querySelector(".open__title");
 const openButton = openPage.querySelector(".open__button");
 const openButtonTxt = openPage.querySelector(".open__button span");
 
-(function () {
-  window.onload = function () {
-    let reloading = false;
-
-    do {
-      gsap.restart();
-      console.log("dd");
-    } while (reloading);
-  };
-})();
 // (function () {
-//   // if (reloading) {
-//   //   //window.location.reload();
-//   // }
-//   // reloading.forEach((el) => {
-//   //   if (el) {
-//   //     window.location.reload();
-//   //     return;
-//   //   }
-//   // });
-//   // do {
-//   //   gsap.restart();
-//   //   console.log("dd");
-//   // } while (reloading);
+//   scrollTo(0, 0);
 // })();
 
+// 페이지 트랜지션
 openButton.addEventListener("click", () => {
   loading();
 });
