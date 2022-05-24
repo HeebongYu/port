@@ -185,11 +185,58 @@
         }
       }
 
-      /* X */
+      /* cont__section02 */
       .cont__section02 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+      .cont__section02 .decoT {
+        position: absolute;
+        left: 2vw;
+        bottom: 2vw;
+      }
+      .cont__section02 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+        font-size: calc(14px + 6.8vw);
+        line-height: calc(14px + 6vw);
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      .cont__section02 iframe {
+        width: 80%;
+        height: 70%;
+      }
+
+      /* X */
       .cont__section03 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+      .cont__section03 .decoT {
+        position: absolute;
+        left: 2vw;
+        top: 2vw;
+      }
+      .cont__section03 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+        font-size: calc(14px + 6.8vw);
+        line-height: calc(14px + 6vw);
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      .cont__section03 iframe {
+        width: 60%;
+        height: 80%;
+      }
+
       .cont__section04 {
       }
       .cont__section05 {
@@ -203,8 +250,6 @@
       <section class="cont__page">
         <p class="animate__animated animate__zoomIn txt">
           이제 컨텐츠들을 즐기러 가요.
-          <br />
-          클릭하면 컨텐츠가 확대됩니다.
         </p>
         <div class="mouse-container">
           <div class="mouse">
@@ -241,8 +286,24 @@
           </div>
         </section>
 
-        <section class="cont__section02 border">02</section>
-        <section class="cont__section03 border">03</section>
+        <section class="cont__section02 border">
+          <iframe
+            src="https://heebongyu.github.io/webs_class/javascript/effect/sliderEffect.html"
+            frameborder="0"
+          ></iframe>
+          <div class="decoT">
+            <span> Slider Effect</span>
+          </div>
+        </section>
+        <section class="cont__section03 border">
+          <iframe
+            src="https://heebongyu.github.io/webs_class/javascript/effect/mouseEffect.html"
+            frameborder="0"
+          ></iframe>
+          <div class="decoT">
+            <span> Mouse Effect</span>
+          </div>
+        </section>
         <section class="cont__section04 border">04</section>
         <section class="cont__section05 border">05</section>
         <section class="cont__section06 border">06</section>
@@ -282,7 +343,7 @@
         if (Math.round(scrollTop) >= wih) {
           document.querySelector(".cont__section01_1").style.display = "none";
           contSectionS.forEach((el) => {
-            el.style.display = "block";
+            el.style.display = "flex";
           });
         } else {
           document.querySelector(".cont__section01_1").style.display = "block";
