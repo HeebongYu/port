@@ -5,18 +5,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO ver.2</title>
+
+    <!-- css -->
     <link rel="stylesheet" href="../assets/css/fonts.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <style>
       body {
         background-color: var(--red);
       }
+      body::-webkit-scrollbar {
+        /* Chrome, Safari, Opera */
+        display: none;
+      }
+
+      .cont__wrap {
+        background-color: var(--red);
+      }
+      .cont__page {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .cont__page .txt {
+        color: var(--black);
+        font-family: var(--kr_font);
+        font-size: 3vw;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .cont__section {
+        width: 700vw;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .cont__section01_1 {
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+      }
+      .cont__section01_2 {
+        width: 100vw;
+        height: 100vh;
+        display: none;
+
+        background: #fff;
+      }
+      .cont__section02 {
+        width: 100vw;
+        height: 100vh;
+      }
+      .cont__section03 {
+        width: 100vw;
+        height: 100vh;
+      }
+      .cont__section04 {
+        width: 100vw;
+        height: 100vh;
+      }
+      .cont__section05 {
+        width: 100vw;
+        height: 100vh;
+      }
+      .cont__section06 {
+        width: 100vw;
+        height: 100vh;
+      }
     </style>
   </head>
   <body>
-    ddd
+    <main class="cont__wrap">
+      <section class="cont__page">
+        <p class="animate__animated animate__zoomIn txt">
+          이제 컨텐츠들을 즐기러 가요.
+          <br />
+          클릭하면 컨텐츠가 확대됩니다.
+        </p>
+        <div class="mouse-container">
+          <div class="mouse">
+            <span class="scroll-down"></span>
+          </div>
+        </div>
+      </section>
+      <section class="cont__section01_1 border">01</section>
+
+      <div class="cont__section">
+        <section class="cont__section01_2 border">01</section>
+        <section class="cont__section02 border">02</section>
+        <section class="cont__section03 border">03</section>
+        <section class="cont__section04 border">04</section>
+        <section class="cont__section05 border">05</section>
+        <section class="cont__section06 border">06</section>
+      </div>
+    </main>
+    <!-- //cont__wrap -->
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
     <script src="../assets/js/version.js"></script>
+    <script>
+      (function () {
+        // scrollTo(0, 0);
+      })();
+
+      // // 스무스
+      // const scroller = new LocomotiveScroll({
+      //   el: document.querySelector(".cont__wrap"),
+      //   smooth: true,
+      // });
+
+      function scroll() {
+        // 스크롤 탑
+        let scrollTop = document.documentElement.scrollTop;
+
+        const wih = window.innerHeight;
+        if (scrollTop > wih) {
+          document.querySelector(".cont__section01_1").style.display = "none";
+          document.querySelector(".cont__section01_2").style.display = "block";
+        } else {
+          document.querySelector(".cont__section01_1").style.display = "block";
+          document.querySelector(".cont__section01_2").style.display = "none";
+        }
+
+        const contSection = document.querySelector(".cont__section");
+
+        // const dots = document.querySelector(".dots");
+        // const dot = document.querySelectorAll(".dots .dot");
+        // const contCont = document.querySelector(".cont__cont");
+        // const contSection = document.querySelectorAll(".cont__cont section");
+        // const contBtn = document.querySelector(".cont__btn");
+        // const contLoad = document.querySelector(".cont__load");
+        // const contLoadTxt = document.querySelector(".cont__load .txt");
+
+        let contWidth = contSection.offsetWidth;
+        let viewWidth = document.body.offsetWidth;
+        let viewHeight = window.innerHeight;
+        let screenRatio = viewWidth / viewHeight;
+        document.body.style.height = contWidth / screenRatio + "px";
+        contSection.style.left = -scrollTop * screenRatio + viewWidth + "px";
+        // contLoad.style.width = viewWidth + "px";
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
   </body>
 </html>

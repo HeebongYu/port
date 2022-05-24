@@ -18,7 +18,7 @@ html {
 
 /* 부드러운 이동 */
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 /* 공백 초기화 */

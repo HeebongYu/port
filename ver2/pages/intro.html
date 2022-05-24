@@ -1,18 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO ver.2</title>
+
+    <!-- css -->
     <link rel="stylesheet" href="../assets/css/fonts.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="../assets/css/common.css" />
-    <link rel="stylesheet" href="../assets/css/intro.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
+    <!-- style -->
+    <style>
+      body {
+        background-color: var(--green);
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+      }
+      body::-webkit-scrollbar {
+        /* Chrome, Safari, Opera */
+        display: none;
+      }
+
+      /* 공통 */
+      .txt,
+      .txt1,
+      .txt2,
+      .decoT,
+      .decoP,
+      .decoI {
+        user-select: none;
+        pointer-events: none;
+      }
+
+      /* intro__wrap */
+      .intro__wrap {
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--green);
+        display: block;
+      }
+
+      /* intro__page */
+      .intro__page {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .intro__page .txt {
+        color: var(--black);
+        font-family: var(--kr_font);
+        font-size: 3vw;
+        /* font-weight: 100; */
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      /* intro__section01 */
+      .intro__section01 {
+        width: 100%;
+        height: 50vw;
+        position: relative;
+      }
+      .intro__section01 .decoT {
+        writing-mode: vertical-rl;
+        position: absolute;
+        right: -1.3vw;
+        top: 2.6vw;
+      }
+      .intro__section01 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+
+        font-size: calc(14px + 6.8vw);
+        line-height: calc(14px + 6vw);
+
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      .intro__section01 .intro__container {
+        max-width: 1300px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+      .intro__section01 .decoP {
+        width: 33vw;
+        height: 33vw;
+        background: #000;
+        border-radius: 50%;
+
+        position: absolute;
+        bottom: 12vw;
+        left: 0;
+        overflow: hidden;
+      }
+      .intro__section01 .decoP img {
+        width: 33vw;
+        height: 33vw;
+      }
+      @media (max-width: 1300px) {
+        .intro__section01 .decoP {
+          width: 40vw;
+          height: 40vw;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .intro__section01 .decoP img {
+          width: 40vw;
+          height: 40vw;
+        }
+      }
+
+      /* intro__section02 */
+      .intro__section02 {
+        width: 100%;
+        height: 45vw;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .intro__section02 .decoT {
+        display: flex;
+        align-items: center;
+        margin-left: -0.8vw;
+      }
+      .intro__section02 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+
+        font-size: calc(14px + 6.6vw);
+        line-height: calc(14px + 6vw);
+
+        white-space: nowrap;
+        text-transform: uppercase;
+
+        opacity: 0;
+        transform: translateX(200px);
+      }
+      .intro__section02 .decoI {
+        display: flex;
+        align-items: center;
+      }
+      .intro__section02 .decoI img {
+        width: 45vw;
+        height: 41vw;
+        margin-right: 6vw;
+      }
+      .intro__section02 .txt {
+        font-family: var(--kr_font);
+        color: var(--black);
+        font-size: calc(14px + 0.8vw);
+
+        white-space: nowrap;
+
+        position: absolute;
+        top: 4vw;
+        left: 45%;
+        transform: translateX(-50%);
+      }
+
+      /* intro__section03 */
+      .intro__section03 {
+        width: 100%;
+        height: 50vw;
+      }
+      .intro__section03 .intro__container {
+        max-width: 1300px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+      }
+      .intro__section03 .decoI {
+        margin-top: 3vw;
+        margin-left: -4vw;
+      }
+      .intro__section03 .decoI img {
+        width: 31vw;
+        height: 36vw;
+      }
+      .intro__section03 .decoP {
+        margin-top: 16vw;
+      }
+      .intro__section03 .decoP img {
+        width: 30.8vw;
+        height: 24.4vw;
+      }
+      .intro__section03 .decoT {
+        position: absolute;
+        bottom: 0;
+        right: 6%;
+        text-align: right;
+      }
+      .intro__section03 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+        font-size: calc(14px + 6.6vw);
+        line-height: calc(14px + 6vw);
+        white-space: nowrap;
+        text-transform: uppercase;
+
+        opacity: 0;
+        display: block;
+        transform: translateX(-50px);
+      }
+      .intro__section03 .txt1 {
+        font-family: var(--kr_font);
+        color: var(--black);
+        font-size: calc(14px + 0.8vw);
+
+        white-space: nowrap;
+
+        position: absolute;
+        top: -4vw;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .intro__section03 .txt2 {
+        font-family: var(--kr_font);
+        color: var(--black);
+        font-size: calc(14px + 0.8vw);
+
+        white-space: nowrap;
+
+        position: absolute;
+        top: 5vw;
+        right: 14vw;
+        /* transform: translateX(-50%); */
+      }
+
+      /* intro__section04 */
+      .intro__section04 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-bottom: 1vw solid #4f4335;
+      }
+      .intro__section04 .decoI {
+        margin-bottom: -1px;
+      }
+      .intro__section04 .decoI img {
+        width: 90vw;
+      }
+      .intro__section04 .intro__container {
+        position: absolute;
+        top: 5vw;
+        left: calc(50% + 30px);
+        transform: translateX(-50%);
+        max-width: 1300px;
+        width: 100%;
+      }
+      .intro__section04 .txt {
+        font-family: var(--kr_font);
+        color: var(--black);
+        font-size: calc(14px + 0.8vw);
+        white-space: nowrap;
+      }
+
+      /* intro__section05 */
+      .intro__section05 {
+        height: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .intro__section05 button {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--red);
+        font-size: 7.6vw;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+    </style>
   </head>
   <body>
     <main class="intro__wrap">
@@ -106,6 +386,7 @@
         </section>
         <!-- //intro__section04 -->
       </div>
+      <!-- //intro__section -->
 
       <div class="intro__section05">
         <button>CONTINUE</button>
@@ -118,8 +399,123 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
-    <script src="../assets/js/locomotive-scroll.min.js"></script>
-    <script src="../assets/js/intro.js"></script>
-    <script src="../assets/js/version.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <!-- <script src="../assets/js/version.js"></script> -->
+    <script>
+      (function () {
+        scrollTo(0, 0);
+      })();
+
+      // // 스무스
+      // const locoScroll = new LocomotiveScroll({
+      //   el: document.querySelector(".intro__wrap"),
+      //   smooth: true,
+      // });
+
+      function scroll() {
+        // 스크롤 탑
+        let scrollTop = document.documentElement.scrollTop;
+
+        // 이질감
+        const introSection01 = document.querySelector(".intro__section01");
+        const introSection02 = document.querySelector(".intro__section02");
+        const introSection03 = document.querySelector(".intro__section03");
+        const introSection04 = document.querySelector(".intro__section04");
+        let target2 = introSection02.querySelector(".txt");
+        let target3 = introSection03.querySelector(".txt1");
+        let target4 = introSection03.querySelector(".txt2");
+        let target5 = introSection04.querySelector(".txt");
+        let offset2 = (scrollTop - introSection02.offsetTop) * 0.1;
+        let offset3 = (scrollTop - introSection03.offsetTop) * 0.1;
+        let offset4 = (scrollTop - introSection03.offsetTop) * 0.1;
+        let offset5 = (scrollTop - introSection04.offsetTop) * 0.1;
+        gsap.to(target2, { duration: 0.3, y: offset2 });
+        gsap.to(target3, { duration: 0.3, y: offset3 });
+        gsap.to(target4, { duration: 0.3, y: offset4 });
+        gsap.to(target5, { duration: 0.3, y: offset5 });
+
+        // intro__page 제거
+        const wih = window.innerHeight;
+        if (scrollTop > wih) {
+          document.querySelector(".intro__page").style.display = "none";
+        }
+
+        //   // 스크롤트리거
+        const section02DecoT = document.querySelector(
+          ".intro__section02 .decoT span"
+        );
+        const section03DecoT = document.querySelector(
+          ".intro__section03 .decoT span"
+        );
+        gsap.to(section02DecoT, {
+          scrollTrigger: {
+            trigger: section02DecoT,
+            start: "bottom bottom",
+            end: "top top",
+            markers: false,
+            toggleActions: "play none none none",
+          },
+          x: 0,
+          autoAlpha: 1,
+          duration: 1.25,
+          ease: "power4.inout",
+        });
+        gsap.to(section03DecoT, {
+          scrollTrigger: {
+            trigger: section03DecoT,
+            start: "bottom bottom",
+            end: "top top",
+            markers: false,
+            toggleActions: "play none none none",
+          },
+          x: 0,
+          autoAlpha: 1,
+          duration: 1.25,
+          ease: "power4.out",
+        });
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+
+      // // 페이지 트랜지션
+      const introWrap = document.querySelector(".intro__wrap");
+      const introSection = introWrap.querySelector(".intro__section");
+      const introSection05 = introWrap.querySelector(".intro__section05");
+      const introButton = introWrap.querySelector(".intro__section05 button");
+      introButton.addEventListener("click", () => {
+        // introSection 제거
+        gsap.to(introSection, {
+          duration: 1.5,
+          height: 0,
+          opacity: 0,
+          ease: "expo.inOut",
+        });
+        // introSection05 화면가득
+        gsap.to(introSection05, {
+          duration: 1.5,
+          height: 100 + "vh",
+          ease: "expo.inOut",
+        });
+        // 배경 변경
+        gsap.to(introButton, {
+          duration: 2,
+          fontSize: 100 + "vw",
+          ease: "expo.inOut",
+          delay: 1,
+        });
+        // 배경 변경
+        gsap.to(introWrap, {
+          duration: 1.5,
+          backgroundColor: "#f96f55",
+          ease: "expo.inOut",
+          delay: 1.5,
+        });
+        // intro 페이지로 이동
+        setTimeout(() => {
+          location.href = "./cont.html";
+        }, 3000);
+      });
+    </script>
   </body>
 </html>

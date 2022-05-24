@@ -6,5 +6,5 @@ function addElement() {
   newDiv.appendChild(newContent);
   newDiv.classList.add("version");
 
-  document.body.insertBefore(newDiv, document.body.firstChild);
+  // document.body.insertBefore(newDiv, document.body.firstChild);
 }
