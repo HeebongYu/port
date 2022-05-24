@@ -19,10 +19,10 @@
     <style>
       body {
         background-color: var(--green);
-        -ms-overflow-style: none;
         /* IE and Edge */
-        scrollbar-width: none;
+        -ms-overflow-style: none;
         /* Firefox */
+        scrollbar-width: none;
       }
       body::-webkit-scrollbar {
         /* Chrome, Safari, Opera */
@@ -38,6 +38,55 @@
       .decoI {
         user-select: none;
         pointer-events: none;
+      }
+
+      /* mouse-container */
+      .mouse-container {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        display: block;
+        height: 100px;
+        transform: translate(-50%, -50%);
+      }
+      .mouse-container .mouse {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        width: 50px;
+        height: 80px;
+        border: solid 2px var(--blackW);
+        border-radius: 25px;
+        animation: scroll-mouse 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+      .mouse-container .mouse .scroll-down {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: var(--blackW);
+        border-radius: 50%;
+        margin: 15% auto auto auto;
+        animation: scroll-inner 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+      @keyframes scroll-inner {
+        from {
+          margin-top: 15%;
+        }
+        to {
+          margin-top: 50%;
+        }
+      }
+      @keyframes scroll-mouse {
+        from {
+          margin-top: 0;
+        }
+        to {
+          margin-top: 15px;
+        }
       }
 
       /* intro__wrap */
@@ -291,55 +340,6 @@
         font-size: 7.6vw;
         white-space: nowrap;
         text-transform: uppercase;
-      }
-
-      /* mouse-container */
-      .mouse-container {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        display: block;
-        height: 100px;
-        transform: translate(-50%, -50%);
-      }
-      .mouse-container .mouse {
-        position: relative;
-        margin: 0 auto;
-        display: block;
-        width: 50px;
-        height: 80px;
-        border: solid 2px var(--blackW);
-        border-radius: 25px;
-        animation: scroll-mouse 1.5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease;
-      }
-      .mouse-container .mouse .scroll-down {
-        display: block;
-        width: 10px;
-        height: 10px;
-        background: var(--blackW);
-        border-radius: 50%;
-        margin: 15% auto auto auto;
-        animation: scroll-inner 1.5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease;
-      }
-      @keyframes scroll-inner {
-        from {
-          margin-top: 15%;
-        }
-        to {
-          margin-top: 50%;
-        }
-      }
-      @keyframes scroll-mouse {
-        from {
-          margin-top: 0;
-        }
-        to {
-          margin-top: 15px;
-        }
       }
     </style>
   </head>

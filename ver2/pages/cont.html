@@ -18,81 +18,28 @@
     <style>
       body {
         background-color: var(--red);
+        /* IE and Edge */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
       }
       body::-webkit-scrollbar {
         /* Chrome, Safari, Opera */
         display: none;
       }
 
-      .cont__wrap {
-        background-color: var(--red);
-      }
-      .cont__page {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-      .cont__page .txt {
-        color: var(--black);
-        font-family: var(--kr_font);
-        font-size: 3vw;
-        white-space: nowrap;
-        text-align: center;
+      /* 공통 */
+      .txt,
+      .txt1,
+      .txt2,
+      .decoT,
+      .decoP,
+      .decoI {
+        user-select: none;
+        pointer-events: none;
       }
 
-      .cont__section {
-        width: 700vw;
-        height: 100vh;
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-      .cont__section01_1 {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-
-        background: #fff;
-      }
-      .cont__section01_2 {
-        width: 100vw;
-        height: 100vh;
-        display: none;
-        position: relative;
-
-        background: #fff;
-      }
-      .cont__section01_1 h1,
-      .cont__section01_2 h1 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-      }
-      .cont__section02 {
-        width: 100vw;
-        height: 100vh;
-      }
-      .cont__section03 {
-        width: 100vw;
-        height: 100vh;
-      }
-      .cont__section04 {
-        width: 100vw;
-        height: 100vh;
-      }
-      .cont__section05 {
-        width: 100vw;
-        height: 100vh;
-      }
-      .cont__section06 {
-        width: 100vw;
-        height: 100vh;
-      }
-
+      /* mouse-container */
       .mouse-container {
         position: absolute;
         top: 70%;
@@ -140,6 +87,115 @@
           margin-top: 15px;
         }
       }
+
+      /* cont__wrap */
+      .cont__wrap {
+        background-color: var(--red);
+      }
+      .cont__wrap section {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* cont__page */
+      .cont__page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .cont__page .txt {
+        color: var(--black);
+        font-family: var(--kr_font);
+        font-size: 3vw;
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      /* cont__section */
+      .cont__section {
+        width: 700vw;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      /* cont__section01 */
+      .cont__section01_1,
+      .cont__section01_2 {
+        position: relative;
+      }
+      .cont__section01_1 .decoT,
+      .cont__section01_2 .decoT {
+        writing-mode: vertical-rl;
+        position: absolute;
+        right: 1vw;
+        top: 2.6vw;
+      }
+      .cont__section01_1 .decoT span,
+      .cont__section01_2 .decoT span {
+        font-family: var(--en_font);
+        font-weight: 800;
+        color: var(--white);
+        font-size: calc(14px + 6.8vw);
+        line-height: calc(14px + 6vw);
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      .cont__section01_1 .intro__container,
+      .cont__section01_2 .intro__container {
+        max-width: 1300px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+      .cont__section01_1 .decoP,
+      .cont__section01_2 .decoP {
+        width: 33vw;
+        height: 33vw;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        overflow: hidden;
+      }
+      .cont__section01_1 .decoP img,
+      .cont__section01_2 .decoP img {
+        width: 33vw;
+        height: 33vw;
+      }
+      @media (max-width: 1300px) {
+        .cont__section01_1 .decoP,
+        .cont__section01_2 .decoP {
+          width: 40vw;
+          height: 40vw;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .cont__section01_1 .decoP img,
+        .cont__section01_2 .decoP img {
+          width: 40vw;
+          height: 40vw;
+        }
+      }
+
+      /* X */
+      .cont__section02 {
+      }
+      .cont__section03 {
+      }
+      .cont__section04 {
+      }
+      .cont__section05 {
+      }
+      .cont__section06 {
+      }
     </style>
   </head>
   <body>
@@ -157,15 +213,34 @@
         </div>
       </section>
       <section class="cont__section01_1 border">
-        01
-        <h1>cont__section01_1</h1>
+        <div class="intro__container">
+          <div class="decoP">
+            <img src="../assets/img/photo01.jpg" alt="photo01" />
+          </div>
+        </div>
+        <div class="decoT">
+          <span>
+            Hi, I Make <br />
+            Script.
+          </span>
+        </div>
       </section>
 
       <div class="cont__section">
         <section class="cont__section01_2 border">
-          01
-          <h1>cont__section01_2</h1>
+          <div class="intro__container">
+            <div class="decoP">
+              <img src="../assets/img/photo01.jpg" alt="photo01" />
+            </div>
+          </div>
+          <div class="decoT">
+            <span>
+              Hi, I Make <br />
+              Script.
+            </span>
+          </div>
         </section>
+
         <section class="cont__section02 border">02</section>
         <section class="cont__section03 border">03</section>
         <section class="cont__section04 border">04</section>
@@ -196,24 +271,30 @@
         let scrollTop = document.documentElement.scrollTop;
 
         const wih = window.innerHeight;
-        if (scrollTop > wih) {
+        const contSectionS = document.querySelectorAll(
+          ".cont__section section"
+        );
+
+        contSectionS.forEach((el) => {
+          el.style.display = "none";
+        });
+
+        if (Math.round(scrollTop) >= wih) {
           document.querySelector(".cont__section01_1").style.display = "none";
-          document.querySelector(".cont__section01_2").style.display = "block";
+          contSectionS.forEach((el) => {
+            el.style.display = "block";
+          });
         } else {
           document.querySelector(".cont__section01_1").style.display = "block";
-          document.querySelector(".cont__section01_2").style.display = "none";
+          contSectionS.forEach((el) => {
+            el.style.display = "none";
+          });
         }
 
+        console.log(Math.round(scrollTop));
+        console.log(wih);
+
         const contSection = document.querySelector(".cont__section");
-
-        // const dots = document.querySelector(".dots");
-        // const dot = document.querySelectorAll(".dots .dot");
-        // const contCont = document.querySelector(".cont__cont");
-        // const contSection = document.querySelectorAll(".cont__cont section");
-        // const contBtn = document.querySelector(".cont__btn");
-        // const contLoad = document.querySelector(".cont__load");
-        // const contLoadTxt = document.querySelector(".cont__load .txt");
-
         let contWidth = contSection.offsetWidth;
         let viewWidth = document.body.offsetWidth;
         let viewHeight = window.innerHeight;
