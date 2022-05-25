@@ -508,6 +508,10 @@
         // ==
         // console.log(scrollTop * screenRatio);
 
+        if (scrollTop * screenRatio < contWidth - viewWidth * 2) {
+          section06DecoB.style.top = -100 + "vh";
+        }
+
         requestAnimationFrame(scroll);
       }
       scroll();
