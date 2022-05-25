@@ -120,9 +120,13 @@
         position: fixed;
         top: 0;
         left: 0;
+        background-color: var(--red);
       }
 
       /* cont__section01 */
+      .cont__section01_1 {
+        z-index: 1000;
+      }
       .cont__section01_1,
       .cont__section01_2 {
         position: relative;
@@ -205,7 +209,7 @@
       }
       .cont__section02 .iframe {
         margin-top: 10vh;
-        margin-left: 20vw;
+        margin-left: 10vw;
         height: 80vh;
         width: 70vw;
         background: #000;
@@ -231,7 +235,7 @@
       }
       .cont__section03 .iframe {
         margin-top: 10vh;
-        margin-left: 20vw;
+        margin-left: 10vw;
         height: 80vh;
         width: 70vw;
         background: #000;
@@ -257,7 +261,7 @@
       }
       .cont__section04 .iframe {
         margin-top: 10vh;
-        margin-left: 20vw;
+        margin-left: 10vw;
         height: 80vh;
         width: 70vw;
         background: #000;
@@ -283,7 +287,7 @@
       }
       .cont__section05 .iframe {
         margin-top: 10vh;
-        margin-left: 20vw;
+        margin-left: 10vw;
         height: 80vh;
         width: 70vw;
         background: #000;
@@ -309,10 +313,128 @@
       }
       .cont__section06 .iframe {
         margin-top: 10vh;
-        margin-left: 20vw;
+        margin-left: 10vw;
         height: 80vh;
         width: 70vw;
         background: #000;
+      }
+
+      /* open__button */
+      .decoB {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 154px;
+        user-select: none;
+      }
+      .decoB .bubbly-button {
+        background-color: #89e2da;
+        border-radius: 4px;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 54px;
+        position: relative;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      }
+      .decoB .bubbly-button span {
+        width: 100%;
+        height: 100%;
+        font-family: "Compressa VF";
+        color: var(--black);
+        font-size: 1.2em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .decoB .bubbly-button:hover {
+        box-shadow: 0 2px 25px rgba(137, 226, 218, 0.5);
+        font-weight: bold;
+      }
+      .decoB .bubbly-button:before,
+      .decoB .bubbly-button:after,
+      .decoB .bubbly-button span:before,
+      .decoB .bubbly-button span:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 140%;
+        height: 100%;
+        left: -20%;
+        z-index: -1000;
+        transition: all ease-in-out 0.5s;
+        background-repeat: no-repeat;
+      }
+      .decoB .bubbly-button:before,
+      .decoB .bubbly-button span:before {
+        display: none;
+        top: -75%;
+        background-image: radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, transparent 20%, #89e2da 20%, transparent 30%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #89e2da 15%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%);
+        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+          15% 15%, 10% 10%, 18% 18%;
+      }
+      .decoB .bubbly-button:after,
+      .decoB .bubbly-button span:after {
+        display: none;
+        bottom: -75%;
+        background-image: radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #89e2da 15%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%),
+          radial-gradient(circle, #89e2da 20%, transparent 20%);
+        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%,
+          20% 20%;
+      }
+      .decoB .bubbly-button.animate:before,
+      .decoB .bubbly-button span.animate:before {
+        display: block;
+        animation: topBubbles ease-in-out 0.75s forwards;
+      }
+      .decoB .bubbly-button.animate:after,
+      .decoB .bubbly-button span.animate:after {
+        display: block;
+        animation: bottomBubbles ease-in-out 0.75s forwards;
+      }
+      @keyframes topBubbles {
+        0% {
+          background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%,
+            25% 90%, 40% 90%, 55% 90%, 70% 90%;
+        }
+        50% {
+          background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+        }
+        100% {
+          background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%,
+            22% 40%, 50% 40%, 65% 10%, 90% 20%;
+          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
+      }
+      @keyframes bottomBubbles {
+        0% {
+          background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+        }
+        50% {
+          background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%,
+            95% 60%, 105% 0%;
+        }
+        100% {
+          background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%,
+            95% 70%, 110% 10%;
+          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
       }
     </style>
   </head>
@@ -328,7 +450,7 @@
           </div>
         </div>
       </section>
-      <section class="cont__section01_1 border">
+      <section class="cont__section01_1">
         <div class="intro__container">
           <div class="decoP">
             <img src="../assets/img/photo01.jpg" alt="photo01" />
@@ -343,7 +465,7 @@
       </section>
 
       <div class="cont__section">
-        <section class="cont__section01_2 border">
+        <section class="cont__section01_2">
           <div class="intro__container">
             <div class="decoP">
               <img src="../assets/img/photo01.jpg" alt="photo01" />
@@ -356,70 +478,71 @@
             </span>
           </div>
         </section>
-        <section class="cont__section02 border">
-          <!-- <div class="iframe"></div> -->
-          <iframe
+        <section class="cont__section02">
+          <div class="iframe"></div>
+          <!-- <iframe
             class="iframe"
             src="https://heebongyu.github.io/webs_class/javascript/effect/sliderEffect.html"
             frameborder="0"
-          ></iframe>
+          ></iframe> -->
           <div class="decoT">
             <span>Slider Effect</span>
           </div>
         </section>
-        <section class="cont__section03 border">
-          <!-- <div class="iframe"></div> -->
-          <iframe
+        <section class="cont__section03">
+          <div class="iframe"></div>
+          <!-- <iframe
             class="iframe"
             src="https://heebongyu.github.io/webs_class/javascript/effect/mouseEffect.html"
             frameborder="0"
-          ></iframe>
+          ></iframe> -->
           <div class="decoT">
             <span>Mouse Effect</span>
           </div>
         </section>
-        <section class="cont__section04 border">
-          <!-- <div class="iframe"></div> -->
-          <iframe
+        <section class="cont__section04">
+          <div class="iframe"></div>
+          <!-- <iframe
             class="iframe"
             src="https://heebongyu.github.io/webs_class/javascript/effect/searchEffect.html"
             frameborder="0"
-          ></iframe>
+          ></iframe> -->
           <div class="decoT">
             <span>Search Effect</span>
           </div>
         </section>
-        <section class="cont__section05 border">
-          <!-- <div class="iframe"></div> -->
-          <iframe
+        <section class="cont__section05">
+          <div class="iframe"></div>
+          <!-- <iframe
             class="iframe"
             src="https://heebongyu.github.io/webs_class/javascript/effect/parallaxEffect.html"
             frameborder="0"
-          ></iframe>
+          ></iframe> -->
           <div class="decoT">
             <span>Parallax Effect</span>
           </div>
         </section>
-        <section class="cont__section06 border">
-          <!-- <div class="iframe"></div> -->
-          <iframe
+        <section class="cont__section06">
+          <div class="iframe"></div>
+          <!-- <iframe
             class="iframe"
             src="https://heebongyu.github.io/webs_class/game/index.html"
             frameborder="0"
-          ></iframe>
+          ></iframe> -->
           <div class="decoT">
             <span>Game Effect</span>
           </div>
+          <div class="decoB">
+            <button class="bubbly-button"><span>end page</span></button>
+          </div>
         </section>
       </div>
-
-      <div></div>
     </main>
     <!-- //cont__wrap -->
 
     <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script src="../assets/js/openButton.js"></script>
 
     <!-- <script src="../assets/js/version.js"></script> -->
     <script>
@@ -427,54 +550,106 @@
         // scrollTo(0, 0);
       })();
 
+      const contSection = document.querySelector(".cont__section");
+      const contSectionS = contSection.querySelectorAll("section");
+      const section06 = contSection.querySelector(".cont__section06");
+      const section06Iframe = section06.querySelector(".iframe");
+      const section06DecoT = section06.querySelector(".decoT");
+      const section06DecoB = section06.querySelector(".decoB");
+      const section06DecoBTxt = section06DecoB.querySelector("span");
+
       // // 스무스
       // const scroller = new LocomotiveScroll({
       //   el: document.querySelector(".cont__wrap"),
       //   smooth: true,
       // });
 
-      function scroll() {
-        // 스크롤 탑
-        let scrollTop = document.documentElement.scrollTop;
-
-        const wih = window.innerHeight;
-        const contSectionS = document.querySelectorAll(
-          ".cont__section section"
-        );
-
+      // section들의 display 설정
+      function sectionDisplay(isDisplay) {
         contSectionS.forEach((el) => {
-          el.style.display = "none";
+          el.style.display = isDisplay;
         });
+      }
+      sectionDisplay("none");
 
-        if (Math.round(scrollTop) >= wih) {
-          document.querySelector(".cont__section01_1").style.display = "none";
-          contSectionS.forEach((el) => {
-            el.style.display = "flex";
-          });
-        } else {
-          document.querySelector(".cont__section01_1").style.display = "block";
-          contSectionS.forEach((el) => {
-            el.style.display = "none";
-          });
-        }
-
-        const contSection = document.querySelector(".cont__section");
+      // 스크롤
+      function scroll() {
+        // 변수 저장
+        let scrollTop = document.documentElement.scrollTop;
         let contWidth = contSection.offsetWidth;
         let viewWidth = document.body.offsetWidth;
         let viewHeight = window.innerHeight;
         let screenRatio = viewWidth / viewHeight;
+
+        // 가로 범위 지정
         document.body.style.height = contWidth / screenRatio + "px";
+
+        // 세로 > 가로 변환
+        if (Math.round(scrollTop) >= viewHeight) {
+          document.querySelector(".cont__section01_1").style.display = "none";
+          sectionDisplay("flex");
+        } else {
+          document.querySelector(".cont__section01_1").style.display = "block";
+          sectionDisplay("none");
+        }
+
+        // 가로 이동
         contSection.style.left = -scrollTop * screenRatio + viewWidth + "px";
 
-        // console.log(viewHeight);
-        // console.log(scrollTop);
-
         // console.log(contWidth - viewWidth);
+        // ==
         // console.log(scrollTop * screenRatio);
 
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      // 페이지 이동
+      section06DecoB.addEventListener("click", () => {
+        loading();
+      });
+
+      // 페이지 트랜지션
+      function loading() {
+        // section06Iframe 제거
+        gsap.to(section06Iframe, {
+          duration: 1.5,
+          width: 0,
+          ease: "expo.inOut",
+        });
+        // section06DecoT 제거
+        gsap.to(section06DecoT, {
+          duration: 1.5,
+          opacity: 0,
+          ease: "expo.inOut",
+          delay: 0.5,
+        });
+        // section06DecoBTxt 제거
+        gsap.to(section06DecoBTxt, {
+          duration: 1,
+          opacity: 0,
+          ease: "expo.inOut",
+          delay: 0.5,
+        });
+        // section06DecoB 제거
+        gsap.to(section06DecoB, {
+          duration: 1.5,
+          width: 0,
+          ease: "expo.inOut",
+          delay: 1,
+        });
+        // 배경 변경
+        gsap.to(contSection, {
+          duration: 1.5,
+          backgroundColor: "#89e2da",
+          ease: "expo.inOut",
+          delay: 1.5,
+        });
+        // // 페이지로 이동
+        // setTimeout(() => {
+        //   location.href = "./pages/intro.html";
+        // }, 3000);
+      }
     </script>
   </body>
 </html>
