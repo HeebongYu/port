@@ -368,7 +368,6 @@
             <span>Mouse Effect</span>
           </div>
         </section>
-
         <section class="cont__section04 border">
           <div class="iframe"></div>
           <div class="decoT">
@@ -388,6 +387,8 @@
           </div>
         </section>
       </div>
+
+      <div></div>
     </main>
     <!-- //cont__wrap -->
 
@@ -432,9 +433,6 @@
           });
         }
 
-        console.log(Math.round(scrollTop));
-        console.log(wih);
-
         const contSection = document.querySelector(".cont__section");
         let contWidth = contSection.offsetWidth;
         let viewWidth = document.body.offsetWidth;
@@ -442,7 +440,12 @@
         let screenRatio = viewWidth / viewHeight;
         document.body.style.height = contWidth / screenRatio + "px";
         contSection.style.left = -scrollTop * screenRatio + viewWidth + "px";
-        // contLoad.style.width = viewWidth + "px";
+
+        // console.log(viewHeight);
+        // console.log(scrollTop);
+
+        // console.log(contWidth - viewWidth);
+        // console.log(scrollTop * screenRatio);
 
         requestAnimationFrame(scroll);
       }
