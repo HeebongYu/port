@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Six+Caps&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .background {
+        position: relative;
+        height: 100%;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #2980b9; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to bottom,
+          #2980b9,
+          #6dd5fa,
+          #ffffff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to bottom,
+          #2980b9,
+          #6dd5fa,
+          #ffffff
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .background {
+        user-select: none;
+      }
+      .wrap {
+        width: 100%;
+        height: 100vh;
+      }
+      h1 {
+        font-family: "Six Caps";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8vw;
+        text-transform: uppercase;
+        white-space: nowrap;
+        letter-spacing: 2vw;
+        color: transparent;
+        user-select: none;
+        pointer-events: none;
+      }
+      h1:focus {
+        outline: none;
+      }
+      h1::before,
+      h1::after {
+        content: attr(data-heading);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      h1::before {
+        color: #2980b9;
+        clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0 60%);
+      }
+      h1::after {
+        color: #192429;
+        clip-path: polygon(0 0, 100% 0%, 100% 36%, 0 56%);
+        animation: slide 5s infinite;
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translate(-20px, 2%);
+        }
+      }
+
+      .pages {
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+        width: 80vw;
+        user-select: none;
+      }
+      .pages ul {
+        display: flex;
+        justify-content: center;
+      }
+      .pages li {
+        display: inline;
+        list-style: none;
+      }
+      .pages li button {
+        font-family: "Poiret One";
+        font-size: 2vw;
+        color: #192429;
+        width: 6vw;
+        height: 6vw;
+        border: 1px solid #192429;
+        border-radius: 50%;
+        background: none;
+        box-sizing: border-box;
+        margin: 1vw;
+        cursor: pointer;
+        user-select: none;
+      }
+      .pages li button:hover {
+        box-shadow: 0 -100px 0 #192429 inset;
+        color: #fff;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <canvas id="canvas"></canvas>
+    </div>
+    <!-- //background -->
+
+    <div class="wrap">
+      <h1 contenteditable data-heading="Mouse Effect">Mouse Effect</h1>
+      <div class="pages">
+        <ul>
+          <li>
+            <a href="#1"><button>1</button></a>
+          </li>
+          <li>
+            <a href="#2"><button>2</button></a>
+          </li>
+          <li>
+            <a href="#3"><button>3</button></a>
+          </li>
+          <li>
+            <a href="#4"><button>4</button></a>
+          </li>
+          <li>
+            <a href="#5"><button>5</button></a>
+          </li>
+          <li>
+            <a href="#6"><button>6</button></a>
+          </li>
+          <li>
+            <a href="#7"><button>7</button></a>
+          </li>
+          <li>
+            <a href="#8"><button>8</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- //wrap -->
+    <script>
+      var h1 = document.querySelector("h1");
+
+      h1.addEventListener("input", function () {
+        this.setAttribute("data-heading", this.innerText);
+      });
+
+      class Arrow {
+        constructor(x, y, column, row, color = "black") {
+          this.x = x;
+          this.y = y;
+          this.column = column;
+          this.row = row;
+          this.color = color;
+          this.rotation = 0;
+        }
+
+        // 사이즈
+        draw(context) {
+          context.save();
+          context.translate(this.x, this.y);
+          context.rotate(this.rotation);
+          context.lineWidth = 2;
+          context.fillStyle = this.color;
+          context.strokeStyle = this.color;
+          context.beginPath();
+          context.moveTo(-20, -10);
+          context.lineTo(0, -10);
+          context.lineTo(0, -20);
+          context.lineTo(20, 0);
+          context.lineTo(0, 20);
+          context.lineTo(0, 10);
+          context.lineTo(-20, 10);
+          context.lineTo(-20, -10);
+          context.closePath();
+          context.fill();
+          context.stroke();
+
+          context.restore();
+        }
+      }
+
+      const captureMouse = (element) => {
+        let mouse = {
+          x: 0,
+          y: 0,
+          event: null,
+        };
+        let body_scrollLeft = document.body.scrollLeft;
+        let element_scrollLeft = document.documentElement.scrollLeft;
+        let body_scrollTop = document.body.scrollTop;
+        let element_scrollTop = document.documentElement.scrollTop;
+        let offsetLeft = element.offsetLeft;
+        let offsetTop = element.offsetTop;
+
+        element.addEventListener(
+          "mousemove",
+          function (event) {
+            let x, y;
+
+            if (event.pageX || event.pageY) {
+              x = event.pageX;
+              y = event.pageY;
+            } else {
+              x = event.clientX + body_scrollLeft + element_scrollLeft;
+              y = event.clientY + body_scrollTop + element_scrollTop;
+            }
+            x -= offsetLeft;
+            y -= offsetTop;
+
+            mouse.x = x;
+            mouse.y = y;
+            mouse.event = event;
+          },
+          false
+        );
+
+        return mouse;
+      };
+
+      const captureTouch = (element) => {
+        let touch = {
+          x: null,
+          y: null,
+          isPressed: false,
+          event: null,
+        };
+
+        let body_scrollLeft = document.body.scrollLeft;
+        let element_scrollLeft = document.documentElement.scrollLeft;
+        let body_scrollTop = document.body.scrollTop;
+        let element_scrollTop = document.documentElement.scrollTop;
+        let offsetLeft = element.offsetLeft;
+        let offsetTop = element.offsetTop;
+
+        element.addEventListener(
+          "touchstart",
+          function (event) {
+            touch.isPressed = true;
+            touch.event = event;
+          },
+          false
+        );
+
+        element.addEventListener(
+          "touchend",
+          function (event) {
+            touch.isPressed = false;
+            touch.x = null;
+            touch.y = null;
+            touch.event = event;
+          },
+          false
+        );
+
+        element.addEventListener(
+          "touchmove",
+          function (event) {
+            let x,
+              y,
+              touch_event = event.touches[0]; //first touch
+
+            if (touch_event.pageX || touch_event.pageY) {
+              x = touch_event.pageX;
+              y = touch_event.pageY;
+            } else {
+              x = touch_event.clientX + body_scrollLeft + element_scrollLeft;
+              y = touch_event.clientY + body_scrollTop + element_scrollTop;
+            }
+            x -= offsetLeft;
+            y -= offsetTop;
+
+            touch.x = x;
+            touch.y = y;
+            touch.event = event;
+          },
+          false
+        );
+
+        return touch;
+      };
+
+      const fitToContainer = (canvas) => {
+        // Make it visually fill the positioned parent
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        // ...then set the internal size to match
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      };
+
+      const clearCanvas = (canvas) => {
+        const context = canvas.getContext("2d");
+        context.clearRect(0, 0, canvas.width, canvas.height);
+      };
+
+      const addArrowsToCanvas = (canvas, arrowWidth, arrowHeight) => {
+        const columns = Math.trunc(canvas.width / arrowWidth);
+        const rows = Math.trunc(canvas.height / arrowHeight);
+        const numArrows = columns * rows;
+        const xGap = (canvas.width - columns * arrowWidth) / 2;
+        const yGap = (canvas.height - rows * arrowHeight) / 2;
+
+        let createArrows = (col, row) => {
+          const arrowArray = [];
+          for (let x = 0; x < col; x++) {
+            for (let y = 0; y < row; y++) {
+              xPos = xGap + arrowWidth / 2 + x * arrowWidth;
+              yPos = yGap + arrowHeight / 2 + y * arrowHeight;
+
+              // 색상
+              let color = "#d5f1fd";
+              //   if (y % 2 == 1) {
+              //     color = "#d8dbbd";
+              //   }
+              //   //if(y % 3 == 1){
+              //   //  color = "#b7e1d5"
+              //   //}
+              arrowArray.push(new Arrow(xPos, yPos, x, y, color));
+            }
+          }
+          return arrowArray;
+        };
+
+        clearCanvas(canvas);
+        const arrows = createArrows(columns, rows);
+        return arrows;
+      };
+
+      const canvas = document.getElementById("canvas");
+      const mouse = captureMouse(canvas);
+      const touch = captureTouch(canvas);
+      const context = canvas.getContext("2d");
+
+      // 간격
+      fitToContainer(canvas);
+      let arrows = addArrowsToCanvas(canvas, 120, 120);
+
+      window.addEventListener("resize", () => {
+        fitToContainer(canvas);
+        arrows = addArrowsToCanvas(canvas, 120, 120);
+      });
+
+      (function drawFrame() {
+        window.requestAnimationFrame(drawFrame, canvas);
+
+        clearCanvas(canvas);
+        arrows.forEach(function (arrow) {
+          let dx = (mouse.x || touch.x) - arrow.x;
+          let dy = (mouse.y || touch.y) - arrow.y;
+
+          arrow.rotation = Math.atan2(dy, dx);
+          arrow.draw(context);
+        });
+      })();
+    </script>
+  </body>
+</html>
