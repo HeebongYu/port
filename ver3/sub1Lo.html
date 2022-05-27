@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO ver.3</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <style>
+      @import url("https://webfontworld.github.io/gmarket/GmarketSans.css");
+
+      /* main */
+      #main {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #319eea;
+      }
+
+      /* section01 */
+      #section01 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sec01__tit {
+        color: #fff;
+        font-family: "GmarketSans";
+        font-size: 3vw;
+        font-weight: 100;
+        white-space: nowrap;
+        text-align: center;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <div id="section01">
+        <h1 class="sec01__tit">
+          포트폴리오는 간결하고 재미있게 구성되도록 노력했습니다.<br />
+          즐겁게 보기를 기원합니다.
+        </h1>
+      </div>
+      <!-- //section01 -->
+    </main>
+    <!-- //main -->
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+      // 페이지 트랜지션
+      const sec01Tit = document.querySelector(".sec01__tit");
+      (function () {
+        scrollTo(0, 0);
+        // sec01Tit 생성
+        gsap.to(sec01Tit, {
+          duration: 1.5,
+          opacity: 1,
+          ease: "expo.inOut",
+          delay: 0,
+        });
+        // sec01Tit 제거
+        gsap.to(sec01Tit, {
+          duration: 1.5,
+          opacity: 0,
+          ease: "expo.inOut",
+          delay: 2,
+        });
+        // 페이지로 이동
+        setTimeout(() => {
+          location.href = "./sub1.html";
+        }, 4000);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Six+Caps&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(-45deg, #ecacc7, #d8dbbd, #b7e1d5, #adb0eb);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        font: 16em/1 Arial;
+        font-family: "Six Caps";
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .text--line {
+        font-size: 0.5em;
+      }
+      svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 7% 28%;
+        stroke-width: 3px;
+        -webkit-animation: stroke-offset 4s infinite linear;
+        animation: stroke-offset 4s infinite linear;
+      }
+      .text-copy:nth-child(1) {
+        stroke: #360745;
+        stroke-dashoffset: 7%;
+      }
+      .text-copy:nth-child(2) {
+        stroke: #d61c59;
+        stroke-dashoffset: 14%;
+      }
+      .text-copy:nth-child(3) {
+        stroke: #e7d84b;
+        stroke-dashoffset: 21%;
+      }
+      .text-copy:nth-child(4) {
+        stroke: #efeac5;
+        stroke-dashoffset: 28%;
+      }
+      .text-copy:nth-child(5) {
+        stroke: #1b8798;
+        stroke-dashoffset: 35%;
+      }
+      @-webkit-keyframes stroke-offset {
+        50% {
+          stroke-dashoffset: 35%;
+          stroke-dasharray: 0 87.5%;
+        }
+      }
+      @keyframes stroke-offset {
+        50% {
+          stroke-dashoffset: 10%;
+          /* stroke-dasharray: 87.5%; */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 800 600">
+      <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="35%" class="text--line">
+          Effect
+        </text>
+        <text text-anchor="middle" x="50%" y="68%" class="text--line2">
+          Search
+        </text>
+      </symbol>
+
+      <g class="g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+      </g>
+    </svg>
+  </body>
+</html>
