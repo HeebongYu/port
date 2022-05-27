@@ -3,7 +3,6 @@
   width: 100%;
   margin: 0 auto;
 }
-
 .scroll {
   position: fixed;
   left: 10px;
@@ -13,7 +12,6 @@
   font-size: 20px;
   z-index: 10000;
 }
-
 .line {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -78,6 +76,27 @@
 .box .text em {
   background: #fff;
   color: #319eea;
+}
+.box2 {
+  width: 100%;
+  margin: 1vw;
+  text-align: center;
+}
+.box2.bs {
+  box-shadow: 0px 4px 20px -4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+.box2.bs:hover {
+  box-shadow: 0px 4px 40px -4px rgba(0, 0, 0, 0.6);
+  transform: scale(1.2);
+}
+.box2 .text2 {
+  font-family: "Poppins";
+  color: #fff;
+  font-size: 3vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /**/
@@ -176,7 +195,6 @@
   initial-value: 0;
   inherits: true;
 }
-/* #section1, */
 .a3d,
 .a3d div {
   display: grid;
