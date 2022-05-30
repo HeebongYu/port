@@ -18,7 +18,7 @@
   -webkit-text-stroke: 1px #fff;
 }
 .line span {
-  /* -webkit-text-fill-color: #319eea; */
+  -webkit-text-fill-color: #fff;
 }
 
 /* box */
@@ -403,3 +403,12 @@ div,
     --f: 0.75;
   }
 }
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
