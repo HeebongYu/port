@@ -81,9 +81,8 @@
   padding: 20px;
   word-break: keep-all;
 }
-.box .text em {
-  background: #fff;
-  color: #319eea;
+.box .text li {
+  list-style: armenian;
 }
 .box2 {
   width: 100%;
