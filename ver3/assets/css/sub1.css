@@ -20,6 +20,14 @@
 .line span {
   -webkit-text-fill-color: #fff;
 }
+.line2 {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #319eea;
+}
+.line2 span {
+  -webkit-text-fill-color: #319eea;
+}
 
 /* box */
 .box {
