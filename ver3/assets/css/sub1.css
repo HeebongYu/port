@@ -84,6 +84,11 @@
 .box .text li {
   list-style: armenian;
 }
+.box .text li a {
+  color: #319eea;
+  background: #fff;
+  font-weight: 400;
+}
 .box2 {
   width: 100%;
   margin: 1vw;
