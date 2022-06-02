@@ -1380,6 +1380,34 @@
           ease: "expo.inOut",
           delay: 1,
         });
+
+        // sub1ButtonTxt 제거(리셋)
+        gsap.to(sub1ButtonTxt, {
+          duration: 1,
+          opacity: 1,
+          ease: "expo.inOut",
+          delay: 0.5,
+        });
+        // sub1Button 제거(리셋)
+        gsap.to(sub1Button, {
+          duration: 1.5,
+          width: 154 + "px",
+          opacity: 1,
+          ease: "expo.inOut",
+          delay: 1,
+        });
+        // 배경 변경(리셋)
+        gsap.to(document.body, {
+          duration: 0.5,
+          backgroundColor: "#319eea",
+          ease: "expo.inOut",
+          delay: 1,
+        });
+
+        // 페이지로 이동
+        setTimeout(() => {
+          location.href = "./sub2.html";
+        }, 2000);
       }
     </script>
   </body>
