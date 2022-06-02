@@ -1058,12 +1058,12 @@
           </div>
         </div>
       </div>
-      <div id="section6">
-        <div class="sub1__button">
-          <button class="bubbly-button"><span>next page</span></button>
-        </div>
-      </div>
     </main>
+    <div id="section6">
+      <div class="sub1__button">
+        <button class="bubbly-button"><span>next page</span></button>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
@@ -1333,14 +1333,14 @@
     <script>
       // 페이지 트랜지션
       const main = document.querySelector("#main");
+      const sub1Button = document.querySelector(".sub1__button");
+      const sub1ButtonTxt = document.querySelector(".sub1__button span");
 
       (function () {
         openLoading();
       })();
-
       function openLoading() {
         window.scrollTo(0, 0);
-
         gsap.to(main, {
           duration: 1.5,
           opacity: 1,
@@ -1348,10 +1348,39 @@
         });
       }
 
-      // 페이지 트랜지션
-      openButton.addEventListener("click", () => {
+      sub1Button.addEventListener("click", () => {
         loading();
       });
+      function loading() {
+        // main 제거
+        gsap.to(main, {
+          duration: 1.5,
+          opacity: 0,
+          ease: "expo.inOut",
+        });
+        // sub1ButtonTxt 제거
+        gsap.to(sub1ButtonTxt, {
+          duration: 1,
+          opacity: 0,
+          ease: "expo.inOut",
+          delay: 0.5,
+        });
+        // sub1Button 제거
+        gsap.to(sub1Button, {
+          duration: 1.5,
+          width: 0,
+          opacity: 0,
+          ease: "expo.inOut",
+          delay: 1,
+        });
+        // 배경 변경
+        gsap.to(document.body, {
+          duration: 1,
+          backgroundColor: "#f96f55",
+          ease: "expo.inOut",
+          delay: 1,
+        });
+      }
     </script>
   </body>
 </html>
