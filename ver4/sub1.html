@@ -195,6 +195,127 @@
         text-transform: uppercase;
         white-space: nowrap;
       }
+      /* section6 */
+      #section6 {
+        padding-top: 100px;
+        height: 200px;
+      }
+      .sub1__button {
+        position: fixed;
+        bottom: calc(20px + 1vw);
+        left: 50%;
+        width: 154px;
+        user-select: none;
+      }
+      .sub1__button .bubbly-button {
+        background-color: #ce6115;
+        border-radius: 4px;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 54px;
+        position: relative;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      }
+      .sub1__button .bubbly-button span {
+        width: 100%;
+        height: 100%;
+        font-family: "Compressa VF";
+        color: #fff;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .sub1__button .bubbly-button:hover {
+        box-shadow: 0 2px 25px rgba(19, 62, 92, 0.5);
+        font-weight: bold;
+      }
+      .sub1__button .bubbly-button:before,
+      .sub1__button .bubbly-button:after,
+      .sub1__button .bubbly-button span:before,
+      .sub1__button .bubbly-button span:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 140%;
+        height: 100%;
+        left: -20%;
+        z-index: -1000;
+        transition: all ease-in-out 0.5s;
+        background-repeat: no-repeat;
+      }
+      .sub1__button .bubbly-button:before,
+      .sub1__button .bubbly-button span:before {
+        display: none;
+        top: -75%;
+        background-image: radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, transparent 20%, #ce6115 20%, transparent 30%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #ce6115 15%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%);
+        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+          15% 15%, 10% 10%, 18% 18%;
+      }
+      .sub1__button .bubbly-button:after,
+      .sub1__button .bubbly-button span:after {
+        display: none;
+        bottom: -75%;
+        background-image: radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, #ce6115 15%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%),
+          radial-gradient(circle, #ce6115 20%, transparent 20%);
+        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%,
+          20% 20%;
+      }
+      .sub1__button .bubbly-button.animate:before,
+      .sub1__button .bubbly-button span.animate:before {
+        display: block;
+        animation: topBubbles ease-in-out 0.75s forwards;
+      }
+      .sub1__button .bubbly-button.animate:after,
+      .sub1__button .bubbly-button span.animate:after {
+        display: block;
+        animation: bottomBubbles ease-in-out 0.75s forwards;
+      }
+      @keyframes topBubbles {
+        0% {
+          background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%,
+            25% 90%, 40% 90%, 55% 90%, 70% 90%;
+        }
+        50% {
+          background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+        }
+        100% {
+          background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%,
+            22% 40%, 50% 40%, 65% 10%, 90% 20%;
+          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
+      }
+      @keyframes bottomBubbles {
+        0% {
+          background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+        }
+        50% {
+          background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%,
+            95% 60%, 105% 0%;
+        }
+        100% {
+          background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%,
+            95% 70%, 110% 10%;
+          background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -937,8 +1058,10 @@
           </div>
         </div>
       </div>
-      <div class="sub1__button">
-        <button class="bubbly-button"><span>next page</span></button>
+      <div id="section6">
+        <div class="sub1__button">
+          <button class="bubbly-button"><span>next page</span></button>
+        </div>
       </div>
     </main>
 
@@ -1189,17 +1312,45 @@
       }
     </script>
     <script>
+      // 버튼
+      var animateButton = function (e) {
+        e.preventDefault;
+        //reset animation
+        e.target.classList.remove("animate");
+
+        e.target.classList.add("animate");
+        setTimeout(function () {
+          e.target.classList.remove("animate");
+        }, 700);
+      };
+
+      var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+      for (var i = 0; i < bubblyButtons.length; i++) {
+        bubblyButtons[i].addEventListener("click", animateButton, false);
+      }
+    </script>
+    <script>
       // 페이지 트랜지션
       const main = document.querySelector("#main");
 
       (function () {
-        scrollTo(0, 0);
+        openLoading();
       })();
 
-      gsap.to(main, {
-        duration: 1.5,
-        opacity: 1,
-        ease: "expo.inOut",
+      function openLoading() {
+        window.scrollTo(0, 0);
+
+        gsap.to(main, {
+          duration: 1.5,
+          opacity: 1,
+          ease: "expo.inOut",
+        });
+      }
+
+      // 페이지 트랜지션
+      openButton.addEventListener("click", () => {
+        loading();
       });
     </script>
   </body>
