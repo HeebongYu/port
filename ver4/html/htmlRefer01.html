@@ -5,6 +5,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML 레퍼런스 북</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./img/refer.png" />
+    <link rel="apple-touch-icon-precomposed" href="./img/refer.png" />
+    <link rel="icon" href="./img/refer.png" sizes="128x128" />
+
+    <style>
+      /* 폰트 */
+      @font-face {
+        font-family: "Cafe24Syongsyong";
+        font-weight: normal;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot");
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff2")
+            format("woff2"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff")
+            format("woff"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf")
+            format("truetype");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Cafe24SsurroundAir";
+        font-weight: normal;
+        font-style: normal;
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot");
+        src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff2")
+            format("woff2"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff")
+            format("woff"),
+          url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.ttf")
+            format("truetype");
+        font-display: swap;
+      }
+
+      /* 셋팅 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #ffdbe5;
+        width: 100%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      hr {
+        border-top: 1px solid #efb7c9;
+        border-bottom: 1px solid #fff;
+      }
+      .container {
+        width: 98%;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+
+      /*  */
+      .top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        /* background: white; */
+        color: #cc2a5d;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 1.4rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 8px;
+      }
+      .top:hover {
+        background: #cc2a5d;
+        color: white;
+      }
+      /*  */
+      .title {
+        font-size: 2.6rem;
+        color: #cc2a5d;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px 0;
+        list-style: none;
+      }
+      .list a {
+        font-size: calc(14px + 0.6vw);
+        background: white;
+        padding: 4px 12px;
+        border-radius: 5px;
+        margin: 5px 0.6vw;
+        transition: all 0.3s;
+        cursor: pointer;
+        font-weight: 100;
+        display: inline-block;
+      }
+      .list a:hover {
+        background: #cc2a5d;
+        opacity: 0.6;
+        color: white;
+      }
+      .desc {
+        width: 90%;
+        height: 1000px;
+        background: white;
+        margin: 0 auto;
+        margin-bottom: 5vw;
+        padding: 2vw;
+      }
+      .desc h2 {
+        font-size: 1.8rem;
+      }
+      .desc h3 {
+        margin-top: calc(20px + 1vw);
+        margin-bottom: calc(10px + 1vw);
+        font-size: 1.4rem;
+      }
+      .desc .dox {
+        border: 1px solid #cdcdcd;
+        border-radius: 10px;
+        padding: 20px;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+      .desc .dox li {
+        margin: 5px 0 5px 20px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <span class="top">top</span>
+
+    <h1 class="title">HTML Reference</h1>
+    <hr />
+
+    <div class="container">
+      <ul class="list">
+        <li><a href="#">기초문법</a></li>
+        <li><a>태그</a></li>
+        <li><a>시멘트</a></li>
+        <li><a>웹표준, 웹접근성, 웹호환성</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="desc">
+        <h2>기초문법</h2>
+        <h3>HTML이란?</h3>
+        <ul class="dox">
+          <li>HTML은 Hypertext Markup Language의 약자로 마크업 언어입니다.</li>
+          <li>HTML은 요소로 구성되어 있습니다.</li>
+        </ul>
+        <h3>HTML요소</h3>
+        <ul class="dox">
+          <li>여는 태그: 요소의 시작을 의미합니다.</li>
+          <li>닫는 태그: 요소의 끝을 의미합니다.</li>
+          <li>내용(Content): 요소의 내용입니다.</li>
+          <li>
+            요소(Element): 여는 태그, 닫는 태그, 내용을 통틀어 요소라고 합니다.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
