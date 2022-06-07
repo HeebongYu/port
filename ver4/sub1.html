@@ -1381,6 +1381,13 @@
           delay: 1,
         });
 
+        // main 제거(리셋)
+        gsap.to(main, {
+          duration: 1,
+          opacity: 1,
+          ease: "expo.inOut",
+          delay: 3,
+        });
         // sub1ButtonTxt 제거(리셋)
         gsap.to(sub1ButtonTxt, {
           duration: 1,
