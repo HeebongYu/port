@@ -36,6 +36,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: #ffdbe5;
   width: 100%;
@@ -168,11 +171,23 @@ hr {
   padding: 15px;
 }
 .desc .table a {
-  display: block;
+  display: table;
   text-decoration: underline;
   text-underline-position: under;
   color: #cc2a5d;
   margin-top: 2px;
+}
+.desc .table a:hover {
+  font-weight: bold;
+}
+.desc .table a.move {
+  display: inline-block;
+  color: black;
+  text-decoration: wavy underline;
+}
+.desc .table a.move:hover {
+  color: #cc2a5d;
+  font-weight: normal;
 }
 @media (max-width: 700px) {
   .desc .table td {
