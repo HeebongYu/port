@@ -18,14 +18,17 @@
         background-color: #f96f55;
       }
 
-      /* cont__wrap */
-      #cont__wrap {
+      /* main */
+      #main {
         width: 600vw;
         height: 100vh;
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
         background-color: #f96f55;
       }
-      #cont__wrap section {
+      #main section {
         width: 100vw;
         height: 100vh;
         border: 10px solid #000;
@@ -33,7 +36,7 @@
     </style>
   </head>
   <body>
-    <main id="cont__wrap">
+    <main id="main">
       <section class="cont__section01">01</section>
       <section class="cont__section02">02</section>
       <section class="cont__section03">03</section>
@@ -46,48 +49,25 @@
     <!-- script -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> -->
     <script>
-      // (function () {
-      //   // scrollTo(0, 0);
-      // })();
+      // 스크롤
+      function scroll() {
+        // 변수 저장
+        const main = document.querySelector("#main");
+        let scrollTop = document.documentElement.scrollTop;
+        let contWidth = main.offsetWidth;
+        let viewWidth = document.body.offsetWidth;
+        let viewHeight = window.innerHeight;
+        let screenRatio = viewWidth / viewHeight;
 
-      // const contSection = document.querySelector(".cont__section");
-      // const contSectionS = contSection.querySelectorAll("section");
+        // 가로 범위 지정
+        document.body.style.height = contWidth / screenRatio + "px";
+        // 가로 이동
+        main.style.left = -scrollTop * screenRatio + "px";
 
-      // // 스크롤
-      // function scroll() {
-      //   // 변수 저장
-      //   let scrollTop = document.documentElement.scrollTop;
-      //   let contWidth = contSection.offsetWidth;
-      //   let viewWidth = document.body.offsetWidth;
-      //   let viewHeight = window.innerHeight;
-      //   let screenRatio = viewWidth / viewHeight;
-
-      //   // 가로 범위 지정
-      //   document.body.style.height = contWidth / screenRatio + "px";
-
-      //   // 세로 > 가로 변환
-      //   if (Math.round(scrollTop) >= viewHeight) {
-      //     document.querySelector(".cont__section01_1").style.display = "none";
-      //     sectionDisplay("flex");
-      //   } else {
-      //     document.querySelector(".cont__section01_1").style.display = "block";
-      //     sectionDisplay("none");
-      //   }
-
-      //   // 가로 이동
-      //   contSection.style.left = -scrollTop * screenRatio + "px";
-
-      //   // console.log(contWidth - viewWidth);
-      //   // ==
-      //   // console.log(scrollTop * screenRatio);
-
-      //   if (scrollTop * screenRatio < contWidth - viewWidth * 2) {
-      //     section06DecoB.style.top = -100 + "vh";
-      //   }
-
-      //   requestAnimationFrame(scroll);
-      // }
-      // scroll();
+        // 스크롤 이동 감지
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
   </body>
 </html>
