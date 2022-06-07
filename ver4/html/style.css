@@ -1,0 +1,170 @@
+/* 폰트 */
+@font-face {
+  font-family: "Cafe24Syongsyong";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+/* 셋팅 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #ffdbe5;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+hr {
+  border-top: 1px solid #efb7c9;
+  border-bottom: 1px solid #fff;
+}
+.container {
+  width: 98%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* top */
+.top {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  /* background: white; */
+  color: #cc2a5d;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+  transition: all 0.3s;
+}
+.top:hover {
+  background: #cc2a5d;
+  color: white;
+}
+/* title */
+.title {
+  font-size: 2.6rem;
+  color: #cc2a5d;
+  text-align: center;
+  margin: 20px 0;
+}
+/* list */
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  list-style: none;
+}
+.list a {
+  font-size: calc(14px + 0.6vw);
+  background: white;
+  padding: 4px 12px;
+  border-radius: 5px;
+  margin: 5px 0.6vw;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-weight: 100;
+  display: inline-block;
+}
+.list a.active {
+  background: #cc2a5d;
+  opacity: 0.6;
+  color: white;
+}
+.list a:hover {
+  background: #cc2a5d;
+  opacity: 0.6;
+  color: white;
+}
+/* desc */
+.desc {
+  width: 90%;
+  background: white;
+  margin: 0 auto;
+  margin-bottom: 5vw;
+  padding: 2vw;
+}
+.desc h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: calc(20px + 1vw);
+}
+.desc h3 {
+  margin-bottom: calc(10px + 1vw);
+  font-size: 1.4rem;
+}
+.desc .dox {
+  margin-bottom: calc(20px + 1vw);
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.desc .dox li {
+  margin: 5px 0 5px 20px;
+}
+.desc .table {
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.desc .table caption {
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+.desc .table th {
+  background: #f5f5f5;
+}
+.desc .table th,
+.desc .table td {
+  border: 1px solid #cdcdcd;
+  padding: 15px;
+}
+.desc .table a {
+  display: block;
+  text-decoration: underline;
+  text-underline-position: under;
+  color: #cc2a5d;
+  margin-top: 2px;
+}
