@@ -140,6 +140,18 @@
       .slider:nth-child(6)::before {
         content: "이미지1";
       }
+      /* section3 */
+      #section3 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #section3 .text {
+        position: absolute;
+        top: 2vw;
+        left: 6vw;
+      }
     </style>
   </head>
   <body>
@@ -178,7 +190,9 @@
           </div>
         </div>
       </div>
-      <div class="section" id="section3">03</div>
+      <div class="section" id="section3">
+        <div class="text line"><span>m</span>ouse <span>e</span>ffect</div>
+      </div>
       <div class="section" id="section4">04</div>
       <div class="section" id="section5">05</div>
       <div class="section" id="section6">06</div>
@@ -232,7 +246,7 @@
             //이미지 초기화
             sliderInner.style.transition = "0s"; //애니메이션 속도 초기화
             sliderInner.style.transform = "translateX(0px)"; //위치 초기화
-          }, 300);
+          }, 600);
           currentIndex = 0; //순서 초기화
         }
       }
