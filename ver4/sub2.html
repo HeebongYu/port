@@ -152,7 +152,9 @@
         top: 2vw;
         left: 6vw;
       }
-      #section3 .mouse__left {
+
+      .mouse__left,
+      .mouse__right {
         width: 40vw;
       }
       .mouse__wrap {
@@ -167,45 +169,26 @@
       }
       .mouse__img {
         position: relative;
-        text-align: center;
-        /* perspective: 600px; */
+      }
+      .mouse__left .mouse__img {
         transform: rotateX(0deg) rotateY(0deg) perspective(600px);
         transform-style: preserve-3d;
         will-change: transform;
         transition: all 0.4s;
       }
+      .mouse__right .mouse__img {
+        overflow: hidden;
+      }
       .mouse__img figure {
         width: 50vw;
         position: relative;
       }
-      .mouse__img figure::before {
-        content: "";
-        position: absolute;
-        left: 5%;
-        bottom: -40px;
-        width: 90%;
-        height: 40px;
-        background: url(./assets/imgs/img3.jpg) center center no-repeat;
-        background-size: 100% 40px;
-        filter: blur(10px) grayscale(50%);
-        opacity: 0.9;
-        z-index: -1;
+      .mouse__right .mouse__img figure {
+        transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+        overflow: hidden;
       }
-      .mouse__img figcaption {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-size: 1vw;
-        white-space: nowrap;
-        line-height: 1.6;
-        background: rgba(0, 0, 0, 0.4);
-        padding: 1vw 2vw;
-        transform: translate3d(-50%, -50%, 150px);
-      }
-
-      #section3 .mouse__right {
-        width: 40vw;
-        border: 1px solid #000;
+      .mouse__right .mouse__img figure:hover {
+        transform: scale(1.025);
       }
     </style>
   </head>
@@ -251,16 +234,20 @@
           <div class="mouse__wrap">
             <div class="mouse__img">
               <figure>
-                <img src="./assets/imgs/img3.jpg" alt="이미지" />
+                <img src="./assets/imgs/photo04.jpg" alt="이미지" />
               </figure>
-              <figcaption>
-                <p>I'm tired. I'm going crazy. Get out of my way.</p>
-                <p>지쳤어 나 미쳤어 나 떠날 거야 다 비켜</p>
-              </figcaption>
             </div>
           </div>
         </div>
-        <div class="mouse__right"></div>
+        <div class="mouse__right">
+          <div class="mouse__wrap">
+            <div class="mouse__img">
+              <figure>
+                <img src="./assets/imgs/photo03.jpg" alt="이미지" />
+              </figure>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="section" id="section4">04</div>
       <div class="section" id="section5">05</div>
@@ -269,7 +256,7 @@
     <!-- //cont__wrap -->
 
     <!-- script -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script>
       // 가로 스크롤
       function scroll() {
@@ -346,13 +333,21 @@
         softPageY += anlexPageY * 0.4;
 
         //이미지 움직이기
-        const imgNove = document.querySelector(".mouse__img");
-        imgNove.style.transform =
+        const leftImg = document.querySelector(".mouse__left .mouse__img");
+        const rightImg = document.querySelector(
+          ".mouse__right .mouse__img figure img"
+        );
+        leftImg.style.transform =
           "perspective(600px) rotateX(" +
           softPageY +
           "deg) rotateY(" +
           -softPageX +
           "deg)";
+
+        gsap.to(rightImg, {
+          duration: 0.3,
+          x: centerPageX / 20,
+        });
       }
       document.addEventListener("mousemove", mouseMove);
     </script>
