@@ -29,6 +29,35 @@
         overflow: hidden;
         background: #319eea;
       }
+
+      /* line */
+      .line {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1px #fff;
+      }
+      .line span {
+        -webkit-text-fill-color: #fff;
+      }
+      .line2 {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1px #319eea;
+      }
+      .line2 span {
+        -webkit-text-fill-color: #319eea;
+      }
+      /* scroll */
+      .scroll {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        color: #fff;
+        font-family: "GmarketSans";
+        font-size: 20px;
+        z-index: 10000;
+      }
+
       /* section1 */
       #section1 {
         height: 100vh;
@@ -322,6 +351,72 @@
             95% 70%, 110% 10%;
           background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
         }
+      }
+      /* box */
+      .box {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box.jcc {
+        justify-content: center;
+      }
+      .box.aie {
+        align-items: end;
+      }
+      .box.ais {
+        align-items: start;
+      }
+      .box.aic {
+        align-items: center;
+      }
+      .box .width10 {
+        width: 10%;
+      }
+      .box .width20 {
+        width: 20%;
+      }
+      .box .width30 {
+        width: 30%;
+      }
+      .box .width40 {
+        width: 40%;
+      }
+      .box .width50 {
+        width: 50%;
+      }
+      .box .width60 {
+        width: 60%;
+      }
+      .box .width70 {
+        width: 70%;
+      }
+      .box .width80 {
+        width: 80%;
+      }
+      .box .width90 {
+        width: 90%;
+      }
+      .box .text {
+        font-family: "GmarketSans";
+        color: #fff;
+        font-size: 1.5vw;
+        font-weight: 100;
+        padding: 20px;
+        word-break: keep-all;
+      }
+      .box .text.tac {
+        text-align: center;
+      }
+      .box .text li {
+        list-style: armenian;
+      }
+      .box .text li a {
+        color: #319eea;
+        background: #fff;
+        font-weight: 400;
+      }
+      .box .ml5 {
+        margin-left: 5vw;
       }
     </style>
   </head>

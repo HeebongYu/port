@@ -14,11 +14,10 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
       body {
         background-color: #f96f55;
       }
-
-      /* main */
       #main {
         width: 600%;
         height: 100vh;
@@ -33,16 +32,156 @@
         height: 100vh;
         border: 10px solid #000;
       }
+
+      /* line */
+      .line {
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 1px #fff;
+      }
+      .line span {
+        -webkit-text-fill-color: #fff;
+      }
+      /* text */
+      .text {
+        font-size: 8vw;
+        line-height: 1;
+        color: #fff;
+        font-family: "Poppins";
+        font-weight: 900;
+        white-space: nowrap;
+        text-transform: uppercase;
+        z-index: 1000;
+      }
+
+      /* section1 */
+      #section1 {
+        display: flex;
+      }
+      #section1 .left {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #section1 .left .img {
+        width: 36vw;
+        height: 36vw;
+        border-radius: 50%;
+        background: url(./assets/imgs/photo02.jpg) no-repeat center center;
+        background-size: cover;
+      }
+      #section1 .right {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+      }
+      #section1 .right .text {
+        writing-mode: vertical-rl;
+        margin-right: 5vw;
+      }
+      /* section2 */
+      #section2 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #section2 .text {
+        position: absolute;
+        bottom: 2vw;
+        left: 6vw;
+      }
+      .slider__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider__img {
+        /* 화면 보이는 구간 */
+        width: 70vw;
+        height: 100%;
+        overflow: hidden;
+      }
+      .slider__inner {
+        /* 이미지 움직이는 영역 */
+        display: flex;
+        width: 420vw; /* 이미지 총 길이 */
+        transform: translateX(0);
+      }
+      .slider {
+        width: 70vw;
+        position: relative;
+      }
+      .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+      }
+      .slider:nth-child(1)::before {
+        content: "이미지1";
+      }
+      .slider:nth-child(2)::before {
+        content: "이미지2";
+      }
+      .slider:nth-child(3)::before {
+        content: "이미지3";
+      }
+      .slider:nth-child(4)::before {
+        content: "이미지4";
+      }
+      .slider:nth-child(5)::before {
+        content: "이미지5";
+      }
+      .slider:nth-child(6)::before {
+        content: "이미지1";
+      }
     </style>
   </head>
   <body>
     <main id="main">
-      <div class="section section1">01</div>
-      <div class="section section2">02</div>
-      <div class="section section3">03</div>
-      <div class="section section4">04</div>
-      <div class="section section5">05</div>
-      <div class="section section6">06</div>
+      <div class="section" id="section1">
+        <div class="left">
+          <div class="img"></div>
+        </div>
+        <div class="right">
+          <div class="text line">
+            <span>h</span>i, i <span>m</span>ake <br />s<span>c</span>ript.
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section2">
+        <div class="text line"><span>s</span>lider <span>e</span>ffect</div>
+        <div class="slider__wrap">
+          <div class="slider__img">
+            <div class="slider__inner">
+              <div class="slider">
+                <img src="./assets/imgs/img01.jpg" alt="이미지1" />
+              </div>
+              <div class="slider">
+                <img src="./assets/imgs/img02.jpg" alt="이미지2" />
+              </div>
+              <div class="slider">
+                <img src="./assets/imgs/img03.jpg" alt="이미지3" />
+              </div>
+              <div class="slider">
+                <img src="./assets/imgs/img04.jpg" alt="이미지4" />
+              </div>
+              <div class="slider">
+                <img src="./assets/imgs/img05.jpg" alt="이미지5" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="section3">03</div>
+      <div class="section" id="section4">04</div>
+      <div class="section" id="section5">05</div>
+      <div class="section" id="section6">06</div>
     </main>
     <!-- //cont__wrap -->
 
@@ -68,6 +207,36 @@
         requestAnimationFrame(scroll);
       }
       scroll();
+
+      const sliderWrap = document.querySelector(".slider__wrap"); //.slider__wrap을 변수(sliderWrap)에 저장
+      const sliderImg = document.querySelector(".slider__img"); //.slider__img를 변수(sliderImg)에 저장 //이미지 보이는 영역
+      const sliderInner = document.querySelector(".slider__inner"); //.slider__inner를 변수(sliderInner)에 저장 //이미지 움직이는 영역
+      const slider = document.querySelectorAll(".slider"); //.slider를 변수(slider)에 저장 //5개의 이미지
+
+      let currentIndex = 0; //첫번쨰 이미지 //현제 보이는 이미지
+      let sliderCount = slider.length; //이미지 갯수
+      let sliderWidth = sliderImg.offsetWidth; //이미지 가로 값
+      let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사
+      sliderInner.appendChild(sliderClone); //첫 번째 이미지를 마지막에 넣어줌
+
+      function sliderEffect() {
+        //함수(sliderEffect) 선언
+        currentIndex++;
+        sliderInner.style.transition = "all 0.6s"; //애니메이션 속도 설정
+        sliderInner.style.transform =
+          "translateX(-" + sliderWidth * currentIndex + "px)"; //위치 설정
+
+        //마지막 사진에 갔을 떄
+        if (currentIndex == sliderCount) {
+          setTimeout(() => {
+            //이미지 초기화
+            sliderInner.style.transition = "0s"; //애니메이션 속도 초기화
+            sliderInner.style.transform = "translateX(0px)"; //위치 초기화
+          }, 300);
+          currentIndex = 0; //순서 초기화
+        }
+      }
+      setInterval(sliderEffect, 2000);
     </script>
   </body>
 </html>
