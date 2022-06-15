@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .checking {
+        border: 1px solid #666;
+        background-color: #eee;
+        padding: 2.5px 6px;
+        font-size: 13px;
+        border-radius: 2px;
+        display: inline-block;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  -->
+    <form name="userForm" onsubmit="return outputEmail()">
+      <label for="userEmail">이메일</label>
+      <input id="userEmail" name="userEmail" placeholder="Sample@naver.com" />
+      <a class="checking" onclick="emailChecking()">검사</a>
+      <button>제출</button>
+      <p class="comment"></p>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      let emailCheck = false;
+
+      function emailChecking() {
+        let inputEmail = $("#userEmail").val();
+        let getMail = RegExp(
+          /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/
+        );
+        if (inputEmail == null || inputEmail == "") {
+          $(".comment").text("이메일을 입력해주세요!");
+          emailCheck = false;
+        } else if (!getMail.test(inputEmail)) {
+          $(".comment").text("이메일 형식에 맞게 작성해주세요!");
+          emailCheck = false;
+        } else {
+          $(".comment").text("사용가능한 이메일 입니다.");
+          emailCheck = true;
+        }
+      }
+
+      function outputEmail() {
+        if (emailCheck == false) {
+          $(".comment").text("이메일 검사를 확인해주세요!");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

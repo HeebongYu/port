@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .business-card {
+        width: 400px;
+        aspect-ratio: 9/5;
+        border: 2px solid #666;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .logo-section {
+        text-align: right;
+        font-size: 20px;
+      }
+      .logo-section h1 {
+        line-height: 0.75;
+      }
+      .name-section {
+        font-weight: bold;
+      }
+      .card-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        background: #666;
+        color: #fff;
+        padding: 12px 0;
+      }
+      .card-name .kr-name {
+        font-size: 1.6rem;
+        letter-spacing: 5px;
+      }
+      .card-name .en-name {
+        font-size: 1.2rem;
+      }
+      ul {
+        list-style: none;
+        font-size: 13px;
+      }
+      address {
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="business-card">
+      <div class="logo-section">
+        <h1>asnet</h1>
+        <small>www.asnet.co.kr</small>
+      </div>
+      <div class="name-section">
+        <div class="card-name">
+          <div>
+            <span class="kr-name">유희봉</span>
+            <span class="en-name">Heebong Yu</span>
+          </div>
+        </div>
+        <ul>
+          <li><address>02-476-8980</address></li>
+          <li><address>hbYu@asnet.co.kr</address></li>
+          <li>
+            <address>
+              133-834 서울시 성동구 아차산로 7나길 18 에이팩센터 301호
+            </address>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

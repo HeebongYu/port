@@ -152,7 +152,6 @@
         top: 2vw;
         left: 6vw;
       }
-
       .mouse__left,
       .mouse__right {
         width: 40vw;
@@ -191,7 +190,51 @@
         transform: scale(1.025);
       }
 
-      #section4,
+      /* section4 */
+      #section4 {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #section4 .text {
+        position: absolute;
+        bottom: 2vw;
+        left: 6vw;
+      }
+      .planeGame {
+        background: #333;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        position: relative;
+        margin: 50px;
+      }
+      .planeGame .img {
+        background: url(./assets/imgs/plane.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+      }
+      .planeGame .tt {
+        color: #333;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .planeGame:hover {
+        background: #000;
+      }
+      .planeGame:hover .tt {
+        color: #000;
+      }
       #section5,
       #section6 {
         display: flex;
@@ -258,7 +301,17 @@
           </div>
         </div>
       </div>
-      <div class="section" id="section4">준비중</div>
+      <div class="section" id="section4">
+        <div class="text line"><span>g</span>aem <span>e</span>ffect</div>
+        <a
+          class="planeGame"
+          href="https://heebongyu.github.io/game/planeGame/planeGame.html"
+          target="_blank"
+        >
+          <div class="img"></div>
+          <div class="tt">planeGame</div>
+        </a>
+      </div>
       <div class="section" id="section5">준비중</div>
       <div class="section" id="section6">준비중</div>
     </main>
